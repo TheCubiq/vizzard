@@ -1,12 +1,12 @@
 import myButton from "./components/customButton";
 import vizzyThemer from "./styles/vizzyThemer.css?inline";
 
-function run() {
+window.addEventListener("load", function () {
   // if (self != top) return
   GM_addStyle(vizzyThemer);
   injectVizzard();
   console.log("Vizzard Has Loaded!");
-}
+})
 
 const injectVizzard = () => {
   const header = document.querySelector("header");
@@ -16,5 +16,3 @@ const injectVizzard = () => {
   header.appendChild(myButton());
   playPanel.appendChild(myButton());
 }
-
-run();
