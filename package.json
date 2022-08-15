@@ -10,6 +10,8 @@
   },
   "devDependencies": {
     "@types/tampermonkey": "^4.0.5",
+    "eslint": "^8.22.0",
+    "eslint-config-greasemonkey": "^1.0.1",
     "vite": "^3.0.0",
     "vite-plugin-tm-userscript": "^1.2.0"
   }
