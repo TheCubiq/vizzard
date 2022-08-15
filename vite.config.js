@@ -12,6 +12,7 @@ export default defineConfig({
         'license': 'MIT',
         'match': 'https://vizzy.io/*',
         'icon': 'https://vizzy.io/favicon.ico',
+        'description': 'customize the look and feel of the vizzy website!',
       },
     }),
   ],
