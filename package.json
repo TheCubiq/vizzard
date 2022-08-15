@@ -1,0 +1,16 @@
+{
+  "name": "vizzard",
+  "type": "module",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "watch": "vite build --watch --mode development"
+  },
+  "devDependencies": {
+    "@types/tampermonkey": "^4.0.5",
+    "vite": "^3.0.0",
+    "vite-plugin-tm-userscript": "^1.2.0"
+  }
+}
