@@ -1,5 +1,5 @@
-import myButton from "./components/customButton";
 import vizzyThemer from "./styles/vizzyThemer.css?inline";
+import injectVizzard from "./vizzard";
 
 window.addEventListener("load", function () {
     // load custom css
@@ -19,14 +19,6 @@ new MutationObserver(function () {
   childList: true,
 });
 
-const injectVizzard = () => {
-  const header = document.querySelector("header");
-  const playPanel = document.getElementsByClassName("MuiDivider-flexItem")[1]
-    .parentElement;
-
-  header.appendChild(myButton());
-  playPanel.appendChild(myButton());
-}
 
 const vizzardReload = () => {
   // check if we are in an editor by searching for an element #editor-base 
