@@ -2,11 +2,13 @@ import myButton from "./components/customButton";
 import vizzyThemer from "./styles/vizzyThemer.css?inline";
 
 window.addEventListener("load", function () {
-  // if (self != top) return
-  GM_addStyle(vizzyThemer);
-  injectVizzard();
-  console.log("Vizzard Has Loaded!");
-})
+    // load custom css
+    GM_addStyle(vizzyThemer);
+    // trigger vizzard reload
+    vizzardReload();
+  },
+);
+
 
 const injectVizzard = () => {
   const header = document.querySelector("header");
@@ -16,3 +18,14 @@ const injectVizzard = () => {
   header.appendChild(myButton());
   playPanel.appendChild(myButton());
 }
+
+const vizzardReload = () => {
+  // check if we are in an editor by searching for an element #editor-base 
+  const editorBase = document.querySelector("#editor-base");
+  if (editorBase) {
+    injectVizzard();
+  }
+  else {
+    console.log("not in editor");
+  }
+};
