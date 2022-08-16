@@ -10,6 +10,15 @@ window.addEventListener("load", function () {
 );
 
 
+// run function when navigating to a different page
+new MutationObserver(function () {
+  vizzardReload();
+}).observe(document.querySelector("title"), {
+  subtree: true,
+  characterData: true,
+  childList: true,
+});
+
 const injectVizzard = () => {
   const header = document.querySelector("header");
   const playPanel = document.getElementsByClassName("MuiDivider-flexItem")[1]
