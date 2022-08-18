@@ -10,12 +10,25 @@ const generateHueGradient = (colorCount) => {
   return gradient;
 };
 
-const backupColor = "315, 50%";
+const storedColor = GM_getValue("VizzardTheme", "315, 50%");
+
+const saveTheme = () => {
+  GM_setValue(
+    "VizzardTheme",
+    Selectors().rootStyle.getPropertyValue("--cubiq-accent-color-raw")
+  );
+  //   console.log("theme saved");
+};
+
+const loadTheme = (slider) => {
+    const newTheme = formatColor(updateTheme(slider));
+    Selectors().rootStyle.setProperty("--cubiq-accent-color-raw", newTheme);
+  };
 
 const getCurrentColor = () => {
   const rawColor =
     Selectors().rootStyle.getPropertyValue("--cubiq-accent-color-raw") ||
-    backupColor;
+    storedColor;
   const color = rawColor.replace("%", "").split(", ");
   return color;
   // ex. returns: [315, 50]
@@ -59,10 +72,14 @@ export default function ColorPicker() {
   colorPicker.type = "range";
   colorPicker.value = 0;
   setMode(colorPicker);
+  loadTheme(colorPicker);
 
   colorPicker.oninput = function () {
-    const newTheme = formatColor(updateTheme(this));
-    Selectors().rootStyle.setProperty("--cubiq-accent-color-raw", newTheme);
+    loadTheme(this);
+  };
+
+  colorPicker.onchange = function () {
+    saveTheme(formatColor(getCurrentColor()));
   };
 
   //   switch the slider modes on double-click
