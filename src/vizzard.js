@@ -1,5 +1,4 @@
 import ColorPicker from "./components/colorPicker";
-import myButton from "./components/customButton";
 import Selectors from "./utils/selectors";
 
 const injectVizzard = () => {
