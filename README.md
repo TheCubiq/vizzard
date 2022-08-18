@@ -3,7 +3,7 @@
 
 ## todo's:
 ### ⏰ (!!!)
-    💾 theme settings saving to browser storage 
+    at the moment nothing's that that important
 
 ### 🔜:
     📌 floating playpanel
@@ -15,5 +15,6 @@
     👉 Clickable vizzy logo redirect
 
 ### ✅ done:
+    💾 theme settings saving to browser storage 
     🌈 custom css theme
     🌈 theme color picker
