@@ -22,11 +22,19 @@ new MutationObserver(function () {
 
 const vizzardReload = () => {
   // check if we are in an editor by searching for an element #editor-base 
-  const editorBase = document.querySelector("#editor-base");
-  if (editorBase) {
-    injectVizzard();
-  }
-  else {
+  const editorBase = Selectors().editor;
+  if (!editorBase) {
     console.log("not in editor");
+    return;
   }
+
+  // make sure that the vizzard is not already injected
+  if (editorBase.classList.contains("vizzard-injected")) {
+    console.log("vizzard already injected");
+    return
+  }
+  
+  // inject vizzard
+  injectVizzard();
+  editorBase.classList.add("vizzard-injected");
 };
