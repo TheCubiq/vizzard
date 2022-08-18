@@ -1,14 +1,15 @@
+import colorPicker from "./styles/colorPicker.css?inline";
 import vizzyThemer from "./styles/vizzyThemer.css?inline";
+import Selectors from "./utils/selectors";
 import injectVizzard from "./vizzard";
 
 window.addEventListener("load", function () {
-    // load custom css
-    GM_addStyle(vizzyThemer);
-    // trigger vizzard reload
-    vizzardReload();
-  },
-);
-
+  // load custom css
+  GM_addStyle(vizzyThemer);
+  GM_addStyle(colorPicker);
+  // trigger vizzard reload
+  vizzardReload();
+});
 
 // run function when navigating to a different page
 new MutationObserver(function () {

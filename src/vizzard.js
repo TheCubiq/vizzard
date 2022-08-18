@@ -4,8 +4,7 @@ import Selectors from "./utils/selectors";
 
 const injectVizzard = () => {
   // append custom elements
-    // console.log(selectors().playPanel);
-    // selectors().header.appendChild(myButton());
+  Selectors().playPanel.appendChild(ColorPicker());
   console.log("Vizzard Successfully Injected!");
 };
 
