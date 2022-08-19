@@ -5,9 +5,6 @@
 ### ⏰ (!!!)
     at the moment nothing's that that important
 
-### 🔜:
-    📌 floating playpanel
-
 ### 📝(one day lol)
     📌 detachable preview (pip)
     ⏺ project page button
@@ -15,6 +12,7 @@
     👉 Clickable vizzy logo redirect
 
 ### ✅ done:
+    📌 floating playpanel
     💾 theme settings saving to browser storage 
     🌈 custom css theme
     🌈 theme color picker
