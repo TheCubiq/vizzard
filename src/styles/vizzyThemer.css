@@ -183,16 +183,33 @@ input[type="number"] {
 
 
 /* border color */
+/* literally 1 pixel border at the bottom of the screen fix */
 .mosaic.mosaic-blueprint-theme {
-    background: var(--cubiq-bordercolor) !important;
+    background: black !important;
 }
 
 
 /* main bgcolor */
 .mosaic.mosaic-blueprint-theme .mosaic-preview .mosaic-window-body,
 .mosaic.mosaic-blueprint-theme .mosaic-window .mosaic-window-body {
-    background: var(--cubiq-primary-bgcolor) !important;
-    border: 1px solid var(--cubiq-secondary-bgcolor) !important;
+    background: var(--cubiq-primary-bgcolor) ;
+    /* border: 5px solid var(--cubiq-secondary-bgcolor) !important; */
+}
+
+/* left navbar selected item stripe primary color */
+.mosaic-window-body > div > nav > span > div[class*=" "]
+{
+  background-color: var(--cubiq-accent-light) !important;
+}
+
+/* project window three dots ⋮ icon color */
+.MuiListItem-gutters button.MuiIconButton-root {
+    color: var(--cubiq-darker-color);
+}
+
+/* always show splitters */
+.mosaic.mosaic-blueprint-theme .mosaic-split .mosaic-split-line {
+    box-shadow: 0 0 0 1px var(--cubiq-bordercolor);
 }
 
 /* kind of buggy thing that shouldn't be there lol */
@@ -347,7 +364,7 @@ path[d="M7 10l5 5 5-5z"] {
     background: var(--cubiq-accent);
 }
 
-canvas {
+.react-contextmenu-wrapper canvas:nth-child(1) {
    border-radius: 1em;
 }
 
