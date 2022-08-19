@@ -1,3 +1,4 @@
+import floatingPanel from "./styles/floatingPanel.css?inline";
 import colorPicker from "./styles/colorPicker.css?inline";
 import vizzyThemer from "./styles/vizzyThemer.css?inline";
 import Selectors from "./utils/selectors";
@@ -7,6 +8,7 @@ window.addEventListener("load", function () {
   // load custom css
   GM_addStyle(vizzyThemer);
   GM_addStyle(colorPicker);
+  GM_addStyle(floatingPanel);
   // trigger vizzard reload
   vizzardReload();
 });
