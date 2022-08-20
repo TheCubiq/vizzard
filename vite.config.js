@@ -12,7 +12,9 @@ export default defineConfig({
       headers: {
         'name': 'Vizzard',
         'author': 'Cubiq The Creator',
-        'license': 'MIT',
+        'supportURL': 'https://github.com/TheCubiq/vizzard',
+        'namespace': 'https://github.com/TheCubiq/vizzard',
+        'license': 'GPL-3.0',
         'match': 'https://vizzy.io/*',
         'icon': 'https://vizzy.io/favicon.ico',
         'description': 'customize the look and feel of the vizzy website!',
