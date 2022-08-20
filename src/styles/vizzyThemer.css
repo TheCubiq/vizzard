@@ -329,7 +329,7 @@ input[type="number"] {
 /* little credit :) */
 header>div:nth-child(3)>p:after {
     padding-left: 5px;
-    content: '+ 🤍 by Cubiq ';
+    content: '+ 🤍 by Cubiq uwu';
     color: var(--cubiq-accent-light) !important;
     opacity: 50%;
 }
