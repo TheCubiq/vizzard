@@ -3,6 +3,12 @@
   --floatingPanelClosed: calc(100% - 50px);
 }
 
+@media (pointer: coarse){
+  :root {
+    --floatingPanelClosed: calc(100% - 59px);
+  }
+}
+
 /* apply transitions to all these: */
 
 /* canvas tile */
