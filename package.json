@@ -1,7 +1,7 @@
 {
   "name": "vizzard",
   "type": "module",
-  "version": "0.0.69",
+  "version": "0.0.69-80085",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
