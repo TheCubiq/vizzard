@@ -6,5 +6,7 @@ export default function Selectors() {
     rootStyle: document.documentElement.style,
     clipPanel: document.getElementsByClassName("ps")[3],
     fullBottomPanel: document.querySelector("#editor-base > div > div > div.mosaic-root > div:nth-child(7)"),
+    vizzyLogo: document.querySelector("#root > div > header > div.MuiToolbar-root.MuiToolbar-regular.MuiToolbar-gutters > div > div:nth-child(1) > div"),
+    vizzyLogoEditor: document.querySelector("#editor-base > header > .MuiBox-root"),
   };
 }
