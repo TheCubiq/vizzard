@@ -9,9 +9,9 @@
     📌 detachable preview (pip)
     ⏺ project page button
     🤢 Light Mode (one day ill actually do it and it will look sicc) 
-    👉 Clickable vizzy logo redirect
 
 ### ✅ done:
+    👉 Clickable vizzy logo redirect
     📌 floating playpanel
     💾 theme settings saving to browser storage 
     🌈 custom css theme

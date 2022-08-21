@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name              Vizzard
-// @version           0.0.69-80085
+// @version           0.0.69-8008135
 // @description       customize the look and feel of the vizzy website!
 // @author            Cubiq The Creator
 // @namespace         https://github.com/TheCubiq/vizzard
@@ -395,13 +395,16 @@ path[d="M7 10l5 5 5-5z"] {\r
     border: 1px solid var(--cubiq-accent) !important;\r
 }`;
   function Selectors() {
+    var _a;
     return {
       editor: document.querySelector("#editor-base"),
       header: document.querySelector("header"),
-      playPanel: document.getElementsByClassName("MuiDivider-flexItem")[1].parentElement,
+      playPanel: (_a = document.getElementsByClassName("MuiDivider-flexItem")[1]) == null ? void 0 : _a.parentElement,
       rootStyle: document.documentElement.style,
       clipPanel: document.getElementsByClassName("ps")[3],
-      fullBottomPanel: document.querySelector("#editor-base > div > div > div.mosaic-root > div:nth-child(7)")
+      fullBottomPanel: document.querySelector("#editor-base > div > div > div.mosaic-root > div:nth-child(7)"),
+      vizzyLogo: document.querySelector("#root > div > header > div.MuiToolbar-root.MuiToolbar-regular.MuiToolbar-gutters > div > div:nth-child(1) > div"),
+      vizzyLogoEditor: document.querySelector("#editor-base > header > .MuiBox-root")
     };
   }
   const generateHueGradient = (colorCount) => {
@@ -506,6 +509,18 @@ path[d="M7 10l5 5 5-5z"] {\r
     Selectors().playPanel.appendChild(floatingPanelButton("\u{1F4CC}"));
     console.log("Vizzard Successfully Injected!");
   };
+  const makeLogoClickable = () => {
+    const logo = Selectors().vizzyLogoEditor || Selectors().vizzyLogo;
+    logo.onmousedown = (ev) => {
+      ev.preventDefault();
+    };
+    logo.onmouseup = (e) => {
+      if (e.button === 1) {
+        e.preventDefault();
+        window.open("https://vizzy.io", "_blank");
+      }
+    };
+  };
   window.addEventListener("load", function() {
     GM_addStyle(vizzyThemer);
     GM_addStyle(colorPicker);
@@ -520,15 +535,10 @@ path[d="M7 10l5 5 5-5z"] {\r
     childList: true
   });
   const vizzardReload = () => {
+    makeLogoClickable();
     const editorBase = Selectors().editor;
-    if (!editorBase) {
-      console.log("not in editor");
+    if (!editorBase || (editorBase == null ? void 0 : editorBase.classList.contains("vizzard-injected")))
       return;
-    }
-    if (editorBase.classList.contains("vizzard-injected")) {
-      console.log("vizzard already injected");
-      return;
-    }
     injectVizzard();
     editorBase.classList.add("vizzard-injected");
   };
