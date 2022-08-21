@@ -25,20 +25,14 @@ new MutationObserver(function () {
 
 
 const vizzardReload = () => {
-  // check if we are in an editor by searching for an element #editor-base 
+  // inject scripts that will run on any vizzy page
   makeLogoClickable();
-  const editorBase = Selectors().editor;
-  if (!editorBase) {
-    // console.log("not in editor");
-    return;
-  }
-
-  // make sure that the vizzard is not already injected
-  if (editorBase.classList.contains("vizzard-injected")) {
-    // console.log("vizzard is already injected");
-    return
-  }
   
+  const editorBase = Selectors().editor;
+  // make sure we are in an editor 
+  // make sure that the vizzard is not already injected
+  if (!editorBase || editorBase?.classList.contains("vizzard-injected"))  return;
+
   // inject vizzard
   injectVizzard();
   editorBase.classList.add("vizzard-injected");
