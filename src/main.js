@@ -3,6 +3,7 @@ import colorPicker from "./styles/colorPicker.css?inline";
 import vizzyThemer from "./styles/vizzyThemer.css?inline";
 import Selectors from "./utils/selectors";
 import injectVizzard from "./vizzard";
+import makeLogoClickable from "./scripts/vizzyLogoClickable";
 
 window.addEventListener("load", function () {
   // load custom css
@@ -25,6 +26,7 @@ new MutationObserver(function () {
 
 const vizzardReload = () => {
   // check if we are in an editor by searching for an element #editor-base 
+  makeLogoClickable();
   const editorBase = Selectors().editor;
   if (!editorBase) {
     console.log("not in editor");
