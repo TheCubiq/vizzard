@@ -29,13 +29,13 @@ const vizzardReload = () => {
   makeLogoClickable();
   const editorBase = Selectors().editor;
   if (!editorBase) {
-    console.log("not in editor");
+    // console.log("not in editor");
     return;
   }
 
   // make sure that the vizzard is not already injected
   if (editorBase.classList.contains("vizzard-injected")) {
-    console.log("vizzard already injected");
+    // console.log("vizzard is already injected");
     return
   }
   
