@@ -2,6 +2,8 @@ export default function Selectors() {
   return {
     editor: document.querySelector("#editor-base"),
     header: document.querySelector("header"),
+    headerButtons: document.querySelector("#editor-base > header > div:nth-child(2)"),
+    popupDialog: document.querySelector("body > div.MuiDialog-root > div.MuiDialog-container.MuiDialog-scrollPaper > div"),
     playPanel: document.getElementsByClassName("MuiDivider-flexItem")[1]?.parentElement,
     rootStyle: document.documentElement.style,
     clipPanel: document.getElementsByClassName("ps")[3],
