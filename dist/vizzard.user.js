@@ -6,14 +6,14 @@
 // @namespace         https://github.com/TheCubiq/vizzard
 // @license           GPL-3.0
 // @match             https://vizzy.io/*
-// @require           https://raw.githubusercontent.com/TheCubiq/vizzard/master/versionCheck.js
+// @require           https://greasyfork.org/scripts/449986-vizzardvers/code/VizzardVers.user.js
 // @icon              https://vizzy.io/favicon.ico
 // @supportURL        https://github.com/TheCubiq/vizzard
 // @grant             GM_addStyle
-// @grant             GM_info
-// @grant             unsafeWindow
 // @grant             GM_getValue
 // @grant             GM_setValue
+// @grant             GM_info
+// @grant             unsafeWindow
 // ==/UserScript==
 
 (function() {

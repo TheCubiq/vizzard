@@ -17,7 +17,7 @@ export default defineConfig({
         'license': 'GPL-3.0',
         'match': 'https://vizzy.io/*',
         'icon': 'https://vizzy.io/favicon.ico',
-        'require': 'https://raw.githubusercontent.com/TheCubiq/vizzard/master/versionCheck.js',
+        'require': 'https://greasyfork.org/scripts/449986-vizzardvers/code/VizzardVers.user.js',
         'description': 'customize the look and feel of the vizzy website!',
       },
     }),
