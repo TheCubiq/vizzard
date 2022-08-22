@@ -1,4 +1,5 @@
 # Vizzard    
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/TheCubiq/vizzard?color=%235865f2&display_name=tag&label=Vizzard&style=flat-square)](https://greasyfork.org/en/scripts/449844-vizzard)
 > custom userscript for vizzy.io
 
 ## todo's:
