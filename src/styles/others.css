@@ -1,0 +1,9 @@
+#vizzard-update-btn {
+    color: var(--cubiq-accent-light);
+    position:absolute;
+    right:0;
+    top:2.15em;
+    /* background-color: aqua; */
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
