@@ -1,7 +1,7 @@
 {
   "name": "vizzard",
   "type": "module",
-  "version": "0.0.69-8008135",
+  "version": "0.0.69-8008",
   "scripts": {
     "dev-local": "vite --config vite.config.local.js",
     "dev": "vite",

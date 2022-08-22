@@ -1,14 +1,17 @@
 // ==UserScript==
 // @name              Vizzard
-// @version           0.0.69-8008135
+// @version           0.0.69-8008
 // @description       customize the look and feel of the vizzy website!
 // @author            Cubiq The Creator
 // @namespace         https://github.com/TheCubiq/vizzard
 // @license           GPL-3.0
 // @match             https://vizzy.io/*
+// @require           https://raw.githubusercontent.com/TheCubiq/vizzard/master/versionCheck.js
 // @icon              https://vizzy.io/favicon.ico
 // @supportURL        https://github.com/TheCubiq/vizzard
 // @grant             GM_addStyle
+// @grant             GM_info
+// @grant             unsafeWindow
 // @grant             GM_getValue
 // @grant             GM_setValue
 // ==/UserScript==
@@ -394,11 +397,14 @@ path[d="M7 10l5 5 5-5z"] {\r
 .react-contextmenu-wrapper>#clip[style*="z-index: 2"] {\r
     border: 1px solid var(--cubiq-accent) !important;\r
 }`;
+  const others = "#vizzard-update-btn {\r\n    color: var(--cubiq-accent-light);\r\n    position:absolute;\r\n    right:0;\r\n    top:2.15em;\r\n    /* background-color: aqua; */\r\n    border-top-left-radius: 0;\r\n    border-top-right-radius: 0;\r\n}";
   function Selectors() {
     var _a;
     return {
       editor: document.querySelector("#editor-base"),
       header: document.querySelector("header"),
+      headerButtons: document.querySelector("#editor-base > header > div:nth-child(2)"),
+      popupDialog: document.querySelector("body > div.MuiDialog-root > div.MuiDialog-container.MuiDialog-scrollPaper > div"),
       playPanel: (_a = document.getElementsByClassName("MuiDivider-flexItem")[1]) == null ? void 0 : _a.parentElement,
       rootStyle: document.documentElement.style,
       clipPanel: document.getElementsByClassName("ps")[3],
@@ -504,7 +510,62 @@ path[d="M7 10l5 5 5-5z"] {\r
     };
     return pin;
   };
+  const isUpdateAvailable = () => {
+    const ver = GM_info.script.version;
+    const lt_ver = unsafeWindow.VIZZARD_LATEST_VERSION;
+    const checkVer = lt_ver !== ver;
+    console.log(
+      checkVer ? `%cNew Vizzard Update Available!: v${lt_ver}` : "%cRunning the latest version of Vizzard",
+      "color: " + (checkVer ? "#bada55" : "#55bada")
+    );
+    return checkVer;
+  };
+  const checkForUpdates = () => {
+    if (isUpdateAvailable()) {
+      Selectors().header.appendChild(VizzardUpdateBTN());
+    }
+  };
+  const openReloadDialog = () => {
+    const vizzyLogo = Selectors().vizzyLogoEditor;
+    vizzyLogo.click();
+    const leavingDialog = Selectors().popupDialog;
+    const dialogActions = leavingDialog.querySelector(
+      "div.MuiDialogActions-root.MuiDialogActions-spacing"
+    );
+    const okButton = dialogActions.getElementsByTagName("button")[1];
+    let reloadButton = okButton.cloneNode(true);
+    const dialogMessage = leavingDialog.querySelector("p");
+    reloadButton.querySelector(".MuiButton-label").innerHTML = "Reload";
+    leavingDialog.querySelector("h2").innerHTML = "Vizzard Update";
+    dialogMessage.innerHTML = "Make sure you have saved your progress before reloading <br>A new version of Vizzard is available. Reload now?";
+    reloadButton.onclick = () => {
+      window.location.reload();
+    };
+    dialogActions.appendChild(reloadButton);
+    dialogActions.removeChild(okButton);
+  };
+  const VizzardUpdateBTN = () => {
+    let btn = document.querySelector("#file-menu-button").cloneNode(true);
+    btn.id = "vizzard-update-btn";
+    btn.innerHTML = "Vizzard Update Available!";
+    btn.CustomMode = "update";
+    btn.onclick = null;
+    btn.addEventListener("click", () => {
+      if (btn.CustomMode === "update") {
+        btn.CustomMode = "update-clicked";
+        window.open(
+          "https://greasyfork.org/scripts/449844-vizzard/code/Vizzard.user.js",
+          "_self"
+        );
+        btn.innerHTML = "Reload now!";
+        return;
+      }
+      openReloadDialog();
+    });
+    return btn;
+  };
   const injectVizzard = () => {
+    checkForUpdates();
     Selectors().playPanel.appendChild(ColorPicker());
     Selectors().playPanel.appendChild(floatingPanelButton("\u{1F4CC}"));
     console.log("Vizzard Successfully Injected!");
@@ -525,6 +586,7 @@ path[d="M7 10l5 5 5-5z"] {\r
     GM_addStyle(vizzyThemer);
     GM_addStyle(colorPicker);
     GM_addStyle(floatingPanel);
+    GM_addStyle(others);
     vizzardReload();
   });
   new MutationObserver(function() {

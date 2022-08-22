@@ -11,6 +11,7 @@
     🤢 Light Mode (one day ill actually do it and it will look sicc) 
 
 ### ✅ done:
+    🔄 online update checker
     👉 Clickable vizzy logo redirect
     📌 floating playpanel
     💾 theme settings saving to browser storage 
