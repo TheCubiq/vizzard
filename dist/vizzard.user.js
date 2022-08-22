@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name              Vizzard
-// @version           0.0.69-8008
+// @version           0.0.70-1
 // @description       customize the look and feel of the vizzy website!
 // @author            Cubiq The Creator
 // @namespace         https://github.com/TheCubiq/vizzard
