@@ -192,7 +192,7 @@ input[type="number"] {
 /* main bgcolor */
 .mosaic.mosaic-blueprint-theme .mosaic-preview .mosaic-window-body,
 .mosaic.mosaic-blueprint-theme .mosaic-window .mosaic-window-body {
-    background: var(--cubiq-primary-bgcolor) ;
+    background: var(--cubiq-primary-bgcolor) !important;
     /* border: 5px solid var(--cubiq-secondary-bgcolor) !important; */
 }
 
