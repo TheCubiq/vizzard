@@ -1,0 +1,24 @@
+	/* better folding arrow */
+	div[id*="layer\:"] li .MuiTreeItem-iconContainer button::before {
+		position: absolute;
+		width: 1em;
+		height: 1em;
+		transition-property: rotate, opacity;
+		transition-duration: 0.4s, 0.1s;
+		opacity: 0.3;
+		content: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" focusable="false" viewBox="0 0 24 24" aria-hidden="true"%3E%3Cpath d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" fill="white"%3E%3C/path%3E%3C/svg%3E');
+	}
+	/* on hover glow */
+	div[id*="layer\:"] li .MuiTreeItem-iconContainer:hover button::before {
+		opacity: 1;
+	}
+	/* rotate when open */
+	div[id*="layer\:"] li.Mui-expanded .MuiTreeItem-iconContainer button::before {
+		rotate: 90deg;
+	}
+
+	/* hide original */
+	div[id*="layer\:"] li .MuiTreeItem-iconContainer svg {
+		/* 		display: none; */
+		visibility: hidden;
+	}
