@@ -29,8 +29,9 @@ new MutationObserver(function () {
   childList: true,
 });
 
+const vizzardReload = (inj_styles = false) => {
+  setTimeout(() => {
 
-const vizzardReload = () => {
   // inject scripts that will run on any vizzy page
   makeLogoClickable();
   
@@ -42,4 +43,5 @@ const vizzardReload = () => {
   // inject vizzard
   injectVizzard();
   editorBase.classList.add("vizzard-injected");
+  }, 3000);
 };
