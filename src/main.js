@@ -34,16 +34,17 @@ const vizzardReload = (inj_styles = false) => {
       GM_addStyle(customFolds);
     }
 
-  // inject scripts that will run on any vizzy page
-  makeLogoClickable();
-  
-  const editorBase = Selectors().editor;
-  // make sure we are in an editor 
-  // make sure that the vizzard is not already injected
-  if (!editorBase || editorBase?.classList.contains("vizzard-injected")) return;
+    // inject scripts that will run on any vizzy page
+    makeLogoClickable();
 
-  // inject vizzard
-  injectVizzard();
-  editorBase.classList.add("vizzard-injected");
+    const editorBase = Selectors().editor;
+    // make sure we are in an editor
+    // make sure that the vizzard is not already injected
+    if (!editorBase || editorBase?.classList.contains("vizzard-injected"))
+      return;
+
+    // inject vizzard
+    injectVizzard();
+    editorBase.classList.add("vizzard-injected");
   }, 3000);
 };
