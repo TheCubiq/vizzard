@@ -4,7 +4,7 @@
 
 ## todo's:
 ### ⏰ (!!!)
-    at the moment nothing's that that important
+    🧪 View Expander
 
 ### 📝(one day lol)
     📌 detachable preview (pip)
