@@ -1,0 +1,72 @@
+.vz-expander-comp path {
+  /* d: path("M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"); */
+  /* d: path("M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z");
+    d: path("M344.7 238.5l-144.1-136C193.7 95.97 183.4 94.17 174.6 97.95C165.8 101.8 160.1 110.4 160.1 120V192H32.02C14.33 192 0 206.3 0 224v64c0 17.68 14.33 32 32.02 32h128.1v72c0 9.578 5.707 18.25 14.51 22.05c8.803 3.781 19.03 1.984 26-4.594l144.1-136C354.3 264.4 354.3 247.6 344.7 238.5zM416 32h-64c-17.67 0-32 14.33-32 32s14.33 32 32 32h64c17.67 0 32 14.33 32 32v256c0 17.67-14.33 32-32 32h-64c-17.67 0-32 14.33-32 32s14.33 32 32 32h64c53.02 0 96-42.98 96-96V128C512 74.98 469 32 416 32z"); */
+}
+
+.vz-expander-comp {
+  height: 8px;
+  z-index: 1;
+  top: 0;
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.vz-expander-comp > div {
+  opacity: 0.3;
+  background-color: var(--cubiq-accent-light) !important;
+  /* transition: all 0.3s; */
+  transition-property: opacity, inset, max-width;
+  transition-duration: 0.3s, 0.3s, 0.5s;
+  transition-delay: 0.2s, 0.2s, 0.5s;
+  /* transition-delay: 0.2s; */
+  height: 1em;
+  /* padding: 1em; */
+  /* width: 1em; */
+  overflow: hidden;
+  max-width: 1em;
+    border-radius: 1em;
+  top: -0.8em;
+  overflow: hidden;
+}
+
+.vz-expander-comp > div:hover {
+  top: 0;
+  opacity: 1;
+  max-width: 100px;
+  box-shadow: var(--cubiq-accent-light) 0px -5px 15px;
+}
+
+.vz-expander-comp > div span {
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='MuiSvgIcon-root' focusable='false' viewBox='0 0 24 24' aria-hidden='true'%3E%3Cpath d='M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z' fill='white'%3E%3C/path%3E%3C/svg%3E");
+  opacity: 0;
+  font-size: 1rem;
+  /* margin: 0 1px; */
+  width: 1em;
+  height: 1em;
+  z-index: 1;
+  /* position: absolute; */
+    left: -0.8em;
+  transition-property: opacity, filter;
+  transition-duration: 0.3s;
+  transition-delay: 0.6s, .0s;
+  filter:opacity(0.3);
+}
+
+.vz-expander-comp > div:hover span {
+  opacity: 1;
+}
+
+.vz-expander-comp span:hover {
+    filter:opacity(1);
+}
+
+.vz-xpand-right {
+  transform: rotate(180deg);
+}
+
+/* .vz-expander:hover {
+    height: 2em;
+  } */

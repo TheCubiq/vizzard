@@ -4,6 +4,7 @@ import colorPicker from "./styles/colorPicker.css?inline";
 import vizzyThemer from "./styles/vizzyThemer.css?inline";
 import others from "./styles/others.css?inline";
 import customFolds from "./styles/customFolds.css?inline";
+import expandViews from "./styles/expandViews.css?inline";
 // scripts:
 import Selectors from "./utils/selectors";
 import injectVizzard from "./vizzard";
@@ -32,6 +33,7 @@ const vizzardReload = (inj_styles = false) => {
       GM_addStyle(floatingPanel);
       GM_addStyle(others);
       GM_addStyle(customFolds);
+      GM_addStyle(expandViews);
     }
 
     // inject scripts that will run on any vizzy page
