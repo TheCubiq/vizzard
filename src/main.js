@@ -10,14 +10,8 @@ import injectVizzard from "./vizzard";
 import makeLogoClickable from "./scripts/vizzyLogoClickable";
 
 window.addEventListener("load", function () {
-  // load custom css
-  GM_addStyle(vizzyThemer);
-  GM_addStyle(colorPicker);
-  GM_addStyle(floatingPanel);
-  GM_addStyle(others);
-  GM_addStyle(customFolds);
-  // trigger vizzard reload
-  vizzardReload();
+  // trigger vizzard reload and inject styles as well
+  vizzardReload(true);
 });
 
 // run function when navigating to a different page
@@ -31,6 +25,14 @@ new MutationObserver(function () {
 
 const vizzardReload = (inj_styles = false) => {
   setTimeout(() => {
+    if (inj_styles) {
+      // load custom css
+      GM_addStyle(vizzyThemer);
+      GM_addStyle(colorPicker);
+      GM_addStyle(floatingPanel);
+      GM_addStyle(others);
+      GM_addStyle(customFolds);
+    }
 
   // inject scripts that will run on any vizzy page
   makeLogoClickable();
