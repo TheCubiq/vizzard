@@ -18,31 +18,26 @@ const canExpand = (view_idx) => {
       break;
   }
   return sides;
-}
+};
 
 const ExpanderBTN = (panel, side) => {
   let button = document.createElement("span");
-  const sideName = side === 0 ? "left" : "right";´
+  const sideName = side === 0 ? "left" : "right";
 
-  // create a nice button
-  panel.addEventListener('transitionend', (event) => {
-    if (event.propertyName === (sideName)) {
-    // console.log('Animation ended: ', sideName);
-    panel.classList.remove("vz-animation");
+  // remove the transition after it's done
+  panel.addEventListener("transitionend", (event) => {
+    if (event.propertyName === sideName) {
+      panel.classList.remove("vz-animation");
     }
   });
 
   button.addEventListener("click", () => {
     panel.classList.add("vz-animation");
     panel.classList.toggle(`vz-expanded-${sideName}`);
-    // remove animation class after animation is complete
-    // setTimeout(() => {
-    //   panel.classList.remove("vz-animation");
-    // }, 2000);
   });
   button.classList.add(`vz-xpand-${sideName}`);
   return button;
-}
+};
 
 const ExpanderHeader = (panel, idx) => {
   let header = document.createElement("div");
@@ -57,11 +52,10 @@ const ExpanderHeader = (panel, idx) => {
     wrapper.appendChild(button);
   });
 
-  
   header.appendChild(wrapper);
 
   return header;
-}
+};
 
 const addExpanders = () => {
   const panels = Selectors().panels;
