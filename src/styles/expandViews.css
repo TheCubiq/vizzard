@@ -7,16 +7,23 @@
 }
 
 .vz-expander-header {
-  height: 8px;
+  height: auto;
   z-index: 1;
   top: 0;
   position: absolute;
   width: 100%;
   display: flex;
   justify-content: center;
+  pointer-events: none;
+}
+
+.vz-expander-header:hover {
+  pointer-events: auto;
+  /* background-color: cyan; */
 }
 
 .vz-expander-header > div {
+  pointer-events: auto;
   opacity: 0.3;
   background-color: var(--cubiq-accent-light) !important;
   /* transition: all 0.3s; */
@@ -34,6 +41,7 @@
   overflow: hidden;
 }
 
+.vz-expander-header:hover > div,
 .vz-expander-header > div:hover {
   top: 0;
   opacity: 1;
@@ -56,6 +64,7 @@
   filter:opacity(0.3);
 }
 
+.vz-expander-header:hover > div span,
 .vz-expander-header > div:hover span {
   opacity: 1;
 }
