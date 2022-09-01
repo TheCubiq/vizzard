@@ -48,5 +48,5 @@ const vizzardReload = (inj_styles = false) => {
     // inject vizzard
     injectVizzard();
     editorBase.classList.add("vizzard-injected");
-  }, 3000);
+  }, 2000);
 };
