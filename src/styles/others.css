@@ -1,9 +1,24 @@
 #vizzard-update-btn {
-    color: var(--cubiq-accent-light);
+    /* color: var(--cubiq-accent-light); */
+    color: transparent;
     position:absolute;
     right:0;
-    top:2.15em;
-    /* background-color: aqua; */
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
+    top:2.5em;
+    max-width: 7px;
+    white-space: nowrap;
+    overflow: hidden;
+    padding-inline: 0 ;
+    transition: all 0.5s;
+    /* background-color: var(--cubiq-accent-light);
+    background-color: orange; */
+    background-color: lightgreen;
+}
+
+#vizzard-update-btn:hover,
+#vizzard-update-btn:focus {
+    background-color: var(--cubiq-accent-dark);
+    color: var(--cubiq-primary-text1color);
+    padding-inline: 12px;
+    max-width: fit-content;
+    max-width: 170px;
 }
