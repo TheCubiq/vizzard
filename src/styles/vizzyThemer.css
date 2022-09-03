@@ -202,6 +202,15 @@ input[type="number"] {
   background-color: var(--cubiq-accent-light) !important;
 }
 
+/* left navbar hovered item transition */
+.mosaic-root > div:nth-child(1) nav > span {
+    transition: background-color 0.5s ease;
+}
+/* left navbar hovered item bg color */
+.mosaic-root > div:nth-child(1) nav > span[aria-describedby] {
+    background-color: var(--cubiq-accent-light-transparent) !important;
+}
+
 /* project window three dots ⋮ icon color */
 .MuiListItem-gutters button.MuiIconButton-root {
     color: var(--cubiq-darker-color);
@@ -246,9 +255,14 @@ input[type="number"] {
     color: var(--cubiq-accent-light) !important;
 }
 
-/* little selected icon buttons */
-.MuiIconButton-colorPrimary {
+/* little selected enabled icon buttons */
+.MuiIconButton-colorPrimary:not([disabled]) {
     color: var(--cubiq-accent-light) !important;
+}
+
+/* comp item automation inactive */
+[id*='item'] button{
+    opacity: 0.2;
 }
 
 /* little accent icon button in notifications */
