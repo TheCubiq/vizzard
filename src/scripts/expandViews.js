@@ -1,5 +1,27 @@
 import Selectors from "../utils/selectors";
 
+// todo: get rid of all setTimeout()'s
+
+const addViewSwitchCheck = () => {
+  // Select the "view" header button
+  const btn_view = Selectors().headerNavButtons[3];
+  btn_view.addEventListener("click", () => {
+    // when the little popup menu opens, add event listener to
+    // the "change editor layout" button	
+    setTimeout(() => {
+      const view_switch = document.querySelector("#layout_view");
+      view_switch.addEventListener("click", () => {
+        // alert("view switch");
+        removeOldExpanders();       
+        addExpanders(true);
+      });
+    }, 10);
+  });
+  
+  const BtnClickListener = btn_view.onclick;
+  console.log({BtnClickListener}); 
+};
+
 const canExpand = (view_idx) => {
   // returns array of sides that can be expanded
   // 0 = left, 1 = right
@@ -57,14 +79,31 @@ const ExpanderHeader = (panel, idx) => {
   return header;
 };
 
-const addExpanders = () => {
+const removeOldExpanders = () => {
+  const oldExpanders = document.querySelectorAll(".vz-expander-header");
+  if (oldExpanders.length > 0) {
+    console.log("removing old expanders: ", oldExpanders.length);
+    oldExpanders.forEach((expander) => {
+      // console.log(expander);
+      expander.remove();
+    });
+  }
+};
+
+const addExpanders = (refresh = false) => {
+  if (!refresh) {
+    addViewSwitchCheck();
+  }
+
+  setTimeout(() => {
   const panels = Selectors().panels;
-  console.log(panels);
   panels.forEach((panel, i) => {
     // we want to expand only top views (3)
     if (i > 2) return;
     panel.appendChild(ExpanderHeader(panel, i));
   });
+  // console.log("added expanders");
+  }, 10);
 };
 
 export default addExpanders;

@@ -1,10 +1,12 @@
 export default function Selectors() {
   const panels = document.querySelectorAll('.mosaic-tile');
+  const headerNav = document.querySelector("#editor-base > header > div:nth-child(2) > div");
   return {
     editor: document.querySelector("#editor-base"),
     rootStyle: document.documentElement.style,
     header: document.querySelector("header"),
-    headerButtons: document.querySelector("#editor-base > header > div:nth-child(2)"),
+    headerNav,
+    headerNavButtons: headerNav.querySelectorAll("button"),
     panels,
     fullBottomPanel: panels[3],
     popupDialog: document.querySelector("body > div.MuiDialog-root > div.MuiDialog-container.MuiDialog-scrollPaper > div"),
