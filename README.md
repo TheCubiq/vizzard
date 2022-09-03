@@ -19,4 +19,4 @@
     📌 floating playpanel  1d0ae9b5383198bdc1d3f4f810e71d46d3d68c6  
     💾 theme settings saving to browser storage  b5ac34cc38fd539be1434a60453b6f135e17986  
     🌈 theme color picker  732d0ac1dabfa1c27ae96c4f0fb8af7f77bf79c  
-    🌈 custom css theme  59573891c51a84ca4703c430c2d4778155a59de7  
+    🌈 custom css theme  59573891c51a84ca4703c430c2d4778155a59de7
