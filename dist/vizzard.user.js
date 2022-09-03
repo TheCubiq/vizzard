@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name              Vizzard
-// @version           0.0.70-1
+// @version           0.0.70-2+1
 // @description       customize the look and feel of the vizzy website!
 // @author            Cubiq The Creator
 // @namespace         https://github.com/TheCubiq/vizzard
@@ -10,10 +10,10 @@
 // @icon              https://vizzy.io/favicon.ico
 // @supportURL        https://github.com/TheCubiq/vizzard
 // @grant             GM_addStyle
-// @grant             GM_getValue
-// @grant             GM_setValue
 // @grant             GM_info
 // @grant             unsafeWindow
+// @grant             GM_getValue
+// @grant             GM_setValue
 // ==/UserScript==
 
 (function() {
@@ -215,7 +215,7 @@ input[type="number"] {\r
 /* main bgcolor */\r
 .mosaic.mosaic-blueprint-theme .mosaic-preview .mosaic-window-body,\r
 .mosaic.mosaic-blueprint-theme .mosaic-window .mosaic-window-body {\r
-    background: var(--cubiq-primary-bgcolor) ;\r
+    background: var(--cubiq-primary-bgcolor) !important;\r
     /* border: 5px solid var(--cubiq-secondary-bgcolor) !important; */\r
 }\r
 \r
@@ -223,6 +223,15 @@ input[type="number"] {\r
 .mosaic-window-body > div > nav > span > div[class*=" "]\r
 {\r
   background-color: var(--cubiq-accent-light) !important;\r
+}\r
+\r
+/* left navbar hovered item transition */\r
+.mosaic-root > div:nth-child(1) nav > span {\r
+    transition: background-color 0.5s ease;\r
+}\r
+/* left navbar hovered item bg color */\r
+.mosaic-root > div:nth-child(1) nav > span[aria-describedby] {\r
+    background-color: var(--cubiq-accent-light-transparent) !important;\r
 }\r
 \r
 /* project window three dots \u22EE icon color */\r
@@ -269,9 +278,14 @@ input[type="number"] {\r
     color: var(--cubiq-accent-light) !important;\r
 }\r
 \r
-/* little selected icon buttons */\r
-.MuiIconButton-colorPrimary {\r
+/* little selected enabled icon buttons */\r
+.MuiIconButton-colorPrimary:not([disabled]) {\r
     color: var(--cubiq-accent-light) !important;\r
+}\r
+\r
+/* comp item automation inactive */\r
+[id*='item'] button{\r
+    opacity: 0.2;\r
 }\r
 \r
 /* little accent icon button in notifications */\r
@@ -397,18 +411,145 @@ path[d="M7 10l5 5 5-5z"] {\r
 .react-contextmenu-wrapper>#clip[style*="z-index: 2"] {\r
     border: 1px solid var(--cubiq-accent) !important;\r
 }`;
-  const others = "#vizzard-update-btn {\r\n    color: var(--cubiq-accent-light);\r\n    position:absolute;\r\n    right:0;\r\n    top:2.15em;\r\n    /* background-color: aqua; */\r\n    border-top-left-radius: 0;\r\n    border-top-right-radius: 0;\r\n}";
+  const others = "#vizzard-update-btn {\r\n    /* color: var(--cubiq-accent-light); */\r\n    color: transparent;\r\n    position:absolute;\r\n    right:0;\r\n    top:2.5em;\r\n    max-width: 7px;\r\n    white-space: nowrap;\r\n    overflow: hidden;\r\n    padding-inline: 0 ;\r\n    transition: all 0.5s;\r\n    /* background-color: var(--cubiq-accent-light);\r\n    background-color: orange; */\r\n    background-color: lightgreen;\r\n}\r\n\r\n#vizzard-update-btn:hover,\r\n#vizzard-update-btn:focus {\r\n    background-color: var(--cubiq-accent-dark);\r\n    color: var(--cubiq-primary-text1color);\r\n    padding-inline: 12px;\r\n    max-width: fit-content;\r\n    max-width: 170px;\r\n}";
+  const customFolds = `	/* better folding arrow */\r
+	div[id*="layer\\:"] li .MuiTreeItem-iconContainer button::before {\r
+		position: absolute;\r
+		width: 1em;\r
+		height: 1em;\r
+		transition-property: rotate, opacity;\r
+		transition-duration: 0.4s, 0.1s;\r
+		opacity: 0.3;\r
+		content: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" focusable="false" viewBox="0 0 24 24" aria-hidden="true"%3E%3Cpath d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" fill="white"%3E%3C/path%3E%3C/svg%3E');\r
+	}\r
+	/* on hover glow */\r
+	div[id*="layer\\:"] li .MuiTreeItem-iconContainer:hover button::before {\r
+		opacity: 1;\r
+	}\r
+	/* rotate when open */\r
+	div[id*="layer\\:"] li.Mui-expanded .MuiTreeItem-iconContainer button::before {\r
+		rotate: 90deg;\r
+	}\r
+\r
+	/* hide original */\r
+	div[id*="layer\\:"] li .MuiTreeItem-iconContainer svg {\r
+		/* 		display: none; */\r
+		visibility: hidden;\r
+	}`;
+  const expandViews = `/* Buttons */\r
+\r
+.vz-expander-header {\r
+  border-top: 4px outset rgb(0, 0, 0);\r
+  height: auto;\r
+  z-index: 1;\r
+  top: -2px;\r
+  position: absolute;\r
+  width: 100%;\r
+  display: flex;\r
+  justify-content: center;\r
+  pointer-events: none;\r
+}\r
+\r
+.vz-expander-header:hover {\r
+  pointer-events: auto;\r
+  /* background-color: cyan; */\r
+}\r
+\r
+.vz-expander-header > div {\r
+  pointer-events: auto;\r
+  opacity: 0.3;\r
+  background-color: var(--cubiq-accent-light) !important;\r
+  /* transition: all 0.3s; */\r
+  transition-property: opacity, inset, max-width, box-shadow;\r
+  transition-duration: 0.3s, 0.3s, 0.5s;\r
+  transition-delay: 0.2s, 0.2s, 0.5s;\r
+  height: 1em;\r
+  overflow: hidden;\r
+  max-width: 1em;\r
+  border-radius: 1em;\r
+  top: -0.8em;\r
+  overflow: hidden;\r
+}\r
+\r
+.vz-expander-header:hover > div,\r
+.vz-expander-header > div:hover {\r
+  top: 0;\r
+  opacity: 1;\r
+  max-width: 100px;\r
+  box-shadow: var(--cubiq-accent-light) 0px -5px 15px;\r
+}\r
+\r
+.vz-expander-header > div span {\r
+  opacity: 0;\r
+  font-size: 1rem;\r
+  width: 1em;\r
+  height: 1em;\r
+  z-index: 1;\r
+  left: -0.8em;\r
+  transition-property: opacity, filter, transform;\r
+  transition-duration: 0.3s, 0.3s, 0.5s;\r
+  transition-delay: 0.6s, 0s, 0.3s;\r
+  filter: opacity(0.3);\r
+}\r
+\r
+.vz-expander-header:hover > div span,\r
+.vz-expander-header > div:hover span {\r
+  opacity: 1;\r
+}\r
+\r
+.vz-expander-header span:hover {\r
+  filter: opacity(1);\r
+}\r
+\r
+.vz-expanded-left .vz-xpand-left,\r
+.vz-expanded-right .vz-xpand-right {\r
+  transform: scaleX(-1);\r
+}\r
+\r
+.vz-xpand-left {\r
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='MuiSvgIcon-root' focusable='false' viewBox='0 0 24 24' aria-hidden='true'%3E%3Cpath d='M12 4l1.41 1.41L7.83 11H20v2h-12.17l5.58 5.59L12 20l-8-8z' fill='white'%3E%3C/path%3E%3C/svg%3E");\r
+}\r
+\r
+.vz-xpand-right {\r
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='MuiSvgIcon-root' focusable='false' viewBox='0 0 24 24' aria-hidden='true'%3E%3Cpath d='M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z' fill='white'%3E%3C/path%3E%3C/svg%3E");\r
+}\r
+\r
+/* Expands */\r
+\r
+.vz-animation {\r
+  transition: all 0.5s !important;\r
+  z-index: 10;\r
+}\r
+\r
+#root #editor-base .mosaic-root > .vz-expanded-right {\r
+  right: 0 !important;\r
+  z-index: 10;\r
+}\r
+\r
+#root #editor-base .mosaic-root > .vz-expanded-left {\r
+  left: 0 !important;\r
+  z-index: 2;\r
+}\r
+\r
+#root #editor-base .mosaic-root > div:nth-child(7) {\r
+  z-index: 90;\r
+}\r
+`;
   function Selectors() {
     var _a;
+    const panels = document.querySelectorAll(".mosaic-tile");
+    const headerNav = document.querySelector("#editor-base > header > div:nth-child(2) > div");
     return {
       editor: document.querySelector("#editor-base"),
+      rootStyle: document.documentElement.style,
       header: document.querySelector("header"),
-      headerButtons: document.querySelector("#editor-base > header > div:nth-child(2)"),
+      headerNav,
+      headerNavButtons: headerNav.querySelectorAll("button"),
+      panels,
+      fullBottomPanel: panels[3],
       popupDialog: document.querySelector("body > div.MuiDialog-root > div.MuiDialog-container.MuiDialog-scrollPaper > div"),
       playPanel: (_a = document.getElementsByClassName("MuiDivider-flexItem")[1]) == null ? void 0 : _a.parentElement,
-      rootStyle: document.documentElement.style,
       clipPanel: document.getElementsByClassName("ps")[3],
-      fullBottomPanel: document.querySelector("#editor-base > div > div > div.mosaic-root > div:nth-child(7)"),
       vizzyLogo: document.querySelector("#root > div > header > div.MuiToolbar-root.MuiToolbar-regular.MuiToolbar-gutters > div > div:nth-child(1) > div"),
       vizzyLogoEditor: document.querySelector("#editor-base > header > .MuiBox-root")
     };
@@ -564,8 +705,89 @@ path[d="M7 10l5 5 5-5z"] {\r
     });
     return btn;
   };
+  const addViewSwitchCheck = () => {
+    const btn_view = Selectors().headerNavButtons[3];
+    btn_view.addEventListener("click", () => {
+      setTimeout(() => {
+        const view_switch = document.querySelector("#layout_view");
+        view_switch.addEventListener("click", () => {
+          removeOldExpanders();
+          addExpanders(true);
+        });
+      }, 10);
+    });
+    const BtnClickListener = btn_view.onclick;
+    console.log({ BtnClickListener });
+  };
+  const canExpand = (view_idx) => {
+    const sides = [];
+    switch (view_idx) {
+      case 0:
+        sides.push(1);
+        break;
+      case 1:
+        sides.push(0);
+        sides.push(1);
+        break;
+      case 2:
+        sides.push(0);
+        break;
+    }
+    return sides;
+  };
+  const ExpanderBTN = (panel, side) => {
+    let button = document.createElement("span");
+    const sideName = side === 0 ? "left" : "right";
+    panel.addEventListener("transitionend", (event) => {
+      if (event.propertyName === sideName) {
+        panel.classList.remove("vz-animation");
+      }
+    });
+    button.addEventListener("click", () => {
+      panel.classList.add("vz-animation");
+      panel.classList.toggle(`vz-expanded-${sideName}`);
+    });
+    button.classList.add(`vz-xpand-${sideName}`);
+    return button;
+  };
+  const ExpanderHeader = (panel, idx) => {
+    let header = document.createElement("div");
+    header.classList.add("vz-expander-header");
+    let wrapper = document.createElement("div");
+    wrapper.classList.add("MuiButtonBase-root", "MuiIconButton-root");
+    const expandedViews = canExpand(idx);
+    expandedViews.forEach((view) => {
+      let button = ExpanderBTN(panel, view);
+      wrapper.appendChild(button);
+    });
+    header.appendChild(wrapper);
+    return header;
+  };
+  const removeOldExpanders = () => {
+    const oldExpanders = document.querySelectorAll(".vz-expander-header");
+    if (oldExpanders.length > 0) {
+      console.log("removing old expanders: ", oldExpanders.length);
+      oldExpanders.forEach((expander) => {
+        expander.remove();
+      });
+    }
+  };
+  const addExpanders = (refresh = false) => {
+    if (!refresh) {
+      addViewSwitchCheck();
+    }
+    setTimeout(() => {
+      const panels = Selectors().panels;
+      panels.forEach((panel, i) => {
+        if (i > 2)
+          return;
+        panel.appendChild(ExpanderHeader(panel, i));
+      });
+    }, 10);
+  };
   const injectVizzard = () => {
     checkForUpdates();
+    addExpanders();
     Selectors().playPanel.appendChild(ColorPicker());
     Selectors().playPanel.appendChild(floatingPanelButton("\u{1F4CC}"));
     console.log("Vizzard Successfully Injected!");
@@ -583,11 +805,7 @@ path[d="M7 10l5 5 5-5z"] {\r
     };
   };
   window.addEventListener("load", function() {
-    GM_addStyle(vizzyThemer);
-    GM_addStyle(colorPicker);
-    GM_addStyle(floatingPanel);
-    GM_addStyle(others);
-    vizzardReload();
+    vizzardReload(true);
   });
   new MutationObserver(function() {
     vizzardReload();
@@ -596,12 +814,22 @@ path[d="M7 10l5 5 5-5z"] {\r
     characterData: true,
     childList: true
   });
-  const vizzardReload = () => {
-    makeLogoClickable();
-    const editorBase = Selectors().editor;
-    if (!editorBase || (editorBase == null ? void 0 : editorBase.classList.contains("vizzard-injected")))
-      return;
-    injectVizzard();
-    editorBase.classList.add("vizzard-injected");
+  const vizzardReload = (inj_styles = false) => {
+    setTimeout(() => {
+      if (inj_styles) {
+        GM_addStyle(vizzyThemer);
+        GM_addStyle(colorPicker);
+        GM_addStyle(floatingPanel);
+        GM_addStyle(others);
+        GM_addStyle(customFolds);
+        GM_addStyle(expandViews);
+      }
+      makeLogoClickable();
+      const editorBase = Selectors().editor;
+      if (!editorBase || (editorBase == null ? void 0 : editorBase.classList.contains("vizzard-injected")))
+        return;
+      injectVizzard();
+      editorBase.classList.add("vizzard-injected");
+    }, 2e3);
   };
 })();

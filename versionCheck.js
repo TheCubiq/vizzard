@@ -9,5 +9,5 @@
 // @grant             unsafeWindow
 // ==/UserScript==
 "use strict";
-const VIZZARD_LATEST_VERSION = '0.0.70-1';
+const VIZZARD_LATEST_VERSION = '0.0.70-2+1';
 unsafeWindow.VIZZARD_LATEST_VERSION = VIZZARD_LATEST_VERSION;
