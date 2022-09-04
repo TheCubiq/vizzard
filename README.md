@@ -17,6 +17,7 @@
     - at the moment nothing's that that important
 
 ### 📝(one day lol)
+    🔧 Feature toggler menu
     📌 detachable preview (pip)
     ⏺ project page button
     🤢 Light Mode (one day ill actually do it and it will look sicc) 
