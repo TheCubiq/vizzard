@@ -10,51 +10,6 @@
 :root {
     /* ACCENT */
     --cubiq-accent-color-raw: 315, 50%;
-/* 
-       - if no color is selected,
-         there will be no accent and
-         so it will become white
-                 
-       - to select the color, just uncomment it lol
-  
-       select your color here:
-*/
-/*
-    grey   
-    0,   0%;
-    
-    red     
-    0, 100%; 
-    
-    orange  
-    20, 100%; 
-    
-    gold    
-    45, 100%; 
-    
-    lime    
-    100, 100%; 
-    
-    green   
-    120, 100%; 
-    
-    cyan    
-    165, 100%; 
-    
-    lightblue  
-    200, 100%; 
-    
-    darkblue 
-    220, 100%;
-    
-    purple  
-    270, 100%;
-    
-    pink   
-    315, 50%; 
-    
-    magenta 
-    330, 100%;
 
 /*
        base accent colors are in hs(l) format
@@ -158,13 +113,7 @@ input[type="number"] {
 
 /* a lot of the texts color */
 .MuiTypography-root {
-    /* 
-    if !important, even the 3D/2D icons 
-    that are blue and green will be overridden 
-*/
     color: var(--cubiq-primary-text1color);
-
-    /* color: var(--cubiq-primary-text1color) !important; */
 }
 
 
@@ -174,12 +123,14 @@ input[type="number"] {
     its up to you if you want this on or off
     just uncomment and see :)
 */
-/*
+
+/* 
 .MuiTypography-colorSecondary
 {
     color: var(--cubiq-accent-light) !important; 
-}
+} 
 */
+
 
 
 /* border color */
@@ -341,7 +292,7 @@ input[type="number"] {
 }
 
 /* little credit :) */
-header>div:nth-child(3)>p:after {
+header>div:nth-of-type(3)>p:after {
     padding-left: 5px;
     content: '+ 🤍 by Cubiq uwu';
     color: var(--cubiq-accent-light) !important;
