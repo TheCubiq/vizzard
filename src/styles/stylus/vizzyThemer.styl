@@ -1,0 +1,276 @@
+
+/*
+    cool little trick to move the
+    top actions panel to the bottom
+    just uncomment and see :)
+*/
+/*
+#editor-base
+{
+    flex-direction: column-reverse;
+}
+*/
+/* closed arrow */
+path[d='M10 17l5-5-5-5v10z'] {
+    color: var(--cubiq-primary-text1color) !important;
+}
+
+/* little icons color */
+/*
+    since there's no way to edit the second color,
+    its up to you if you want this on or off
+    just uncomment and see :)
+*/
+/*
+.MuiIconButton-root
+{
+    color: var(--cubiq-primary-text1color) !important; 
+}
+*/
+/* sidemenu button color */
+.MuiSvgIcon-fontSizeLarge {
+    color: var(--cubiq-primary-text1color) !important;
+}
+
+/* sliders */
+input[type='number'] {
+    background: var(--cubiq-accent-light-transparent) !important;
+}
+
+/* selectors */
+.MuiSelect-select.MuiSelect-select {
+    background: var(--cubiq-accent-light-transparent) !important;
+}
+
+/* sidemenu text color */
+.mosaic-window-body>div>nav>span>span {
+    color: var(--cubiq-primary-text1color) !important;
+}
+
+/* properties window opened element name */
+.MuiTypography-colorTextPrimary {
+    color: var(--cubiq-primary-text1color) !important;
+}
+
+/* selected resolution text color */
+.MuiToggleButton-root.Mui-selected {
+    color: var(--cubiq-primary-text1color) !important;
+}
+
+/* unselected resolution text color */
+.MuiToggleButton-root {
+    color: var(--cubiq-darker-color) !important;
+}
+
+/* clip name color, xyz and more */
+.MuiTypography-colorTextSecondary {
+    color: var(--cubiq-primary-text1color) !important;
+}
+
+/* a lot of the texts color */
+.MuiTypography-root {
+    color: var(--cubiq-primary-text1color);
+}
+
+/* 3D / 2D icons color */
+/*
+    since there's no way to edit the second color,
+    its up to you if you want this on or off
+    just uncomment and see :)
+*/
+/*
+.MuiTypography-colorSecondary
+{
+    color: var(--cubiq-accent-light) !important; 
+} 
+*/
+/* border color */
+/* literally 1 pixel border at the bottom of the screen fix */
+.mosaic.mosaic-blueprint-theme {
+    background: black !important;
+}
+
+/* main bgcolor */
+.mosaic.mosaic-blueprint-theme .mosaic-preview .mosaic-window-body, .mosaic.mosaic-blueprint-theme .mosaic-window .mosaic-window-body {
+    background: var(--vz-background) !important; /* border: 5px solid var(--cubiq-secondary-bgcolor) !important; */
+}
+
+/* left navbar selected item stripe primary color */
+.mosaic-window-body > div > nav > span > div[class*=' '] {
+    background-color: var(--cubiq-accent-light) !important;
+}
+
+/* left navbar hovered item transition */
+.mosaic-root > div:nth-child(1) nav > span {
+    transition: background-color 0.5s ease;
+}
+
+/* left navbar hovered item bg color */
+.mosaic-root > div:nth-child(1) nav > span[aria-describedby] {
+    background-color: var(--cubiq-accent-light-transparent) !important;
+}
+
+/* project window three dots ⋮ icon color */
+.MuiListItem-gutters button.MuiIconButton-root {
+    color: var(--cubiq-darker-color);
+}
+
+/* always show splitters */
+.mosaic.mosaic-blueprint-theme .mosaic-split .mosaic-split-line {
+    box-shadow: 0 0 0 1px var(--cubiq-bordercolor);
+}
+
+/* kind of buggy thing that shouldn't be there lol */
+.mosaic-preview {
+    opacity: 0%;
+}
+
+/* properties window background */
+.scrollbar-container>ul>div>div {
+    background: var(--cubiq-secondary-bgcolor) !important;
+}
+
+/* text underline */
+.MuiInput-underline:before {
+    border-bottom: 2px solid var(--cubiq-primary-text1color) !important;
+}
+
+/* font color for selectors and text fields */
+.MuiInputBase-input {
+    color: var(--cubiq-primary-text1color) !important;
+}
+
+/* ------- accent color -------- */
+/* titles font color */
+.MuiTypography-colorPrimary {
+    color: var(--cubiq-accent-light) !important;
+}
+
+/* text primary.. */
+.MuiButton-textPrimary {
+    color: var(--cubiq-accent-light) !important;
+}
+
+/* little selected enabled icon buttons */
+.MuiIconButton-colorPrimary:not([disabled]) {
+    color: var(--cubiq-accent-light) !important;
+}
+
+/* comp item automation inactive */
+[id*='item'] button {
+    opacity: 0.2;
+}
+
+/* little accent icon button in notifications */
+.MuiSvgIcon-colorPrimary {
+    color: var(--cubiq-accent-light) !important;
+}
+
+/* checked checkbox */
+.MuiCheckbox-colorPrimary.Mui-checked {
+    color: var(--cubiq-accent-light) !important;
+}
+
+/* choose audio */
+.MuiButton-outlinedPrimary {
+    border: 1px solid var(--cubiq-accent-light) !important;
+    color: var(--cubiq-accent-light) !important;
+}
+
+/* volume slider color */
+.MuiSlider-root {
+    color: var(--cubiq-accent-light) !important;
+}
+
+/* text underline on edit */
+.MuiInput-underline:after {
+    border-bottom: 2px solid var(--cubiq-accent-light) !important;
+}
+
+/* selected item bgcolor */
+.MuiTreeItem-root[tabindex='0']>.MuiTreeItem-content {
+    background-color: var(--cubiq-accent-light-transparent) !important;
+}
+
+/* song bar pointer thing.. lol */
+.mosaic-window-body>div:nth-child(1)>div:nth-child(1)>div:nth-child(2)>div:nth-child(1)>div:nth-child(1)>div:nth-child(2) {
+    background-color: var(--cubiq-accent) !important;
+}
+
+/* song already played bg thing */
+.mosaic-window-body>div:nth-child(1)>div:nth-child(1)>div:nth-child(2)>div:nth-child(1)>div:nth-child(1)>div:nth-child(1)>div:nth-child(2) {
+    background-color: var(--cubiq-accent-light-transparent) !important;
+}
+
+/* explore creations in top bar */
+.MuiChip-clickable {
+    background: var(--vz-background) !important;
+    border: 1px solid var(--cubiq-accent-light) !important;
+    color: var(--cubiq-accent-light) !important;
+}
+
+/* explore creations in projects in sidemenu */
+.MuiButton-containedPrimary {
+    background: var(--vz-background) !important;
+    border: 1px solid var(--cubiq-accent-light) !important;
+    color: var(--cubiq-accent-light) !important;
+}
+
+/* feedback guy background */
+/*
+   i "removed" it as imo it looks better without it
+   and since it had !important on its color,
+   i couldn't change it's accent and it would remain
+   purple which doensn't fit with some colors..
+*/
+._hj-3obO5__EmotionIconDefault__commentIcon:before {
+    opacity: 0%;
+}
+
+/* feedback guy */
+._hj_feedback_container ._hj-qoDG___EmotionIconDefault__iconEmotionDefault._hj-1BEBR__EmotionIconDefault__like ._hj-2RA7u__EmotionIconDefault__expressionIcon:before {
+    content: '\e909' !important;
+}
+
+/* little credit :) */
+header>div:nth-of-type(3)>p:after {
+    padding-left: 5px;
+    content: '+ 🤍 by Cubiq uwu';
+    color: var(--cubiq-accent-light) !important;
+    opacity: 50%;
+}
+
+/* add effect page buttons on hover */
+div[role='presentation']>div:nth-child(3)>div:nth-child(1)>div:nth-child(3)>div:nth-child(1)>div:nth-child(1)>button:hover, div[role='presentation']>div:nth-child(3)>div:nth-child(1)>div:nth-child(3)>button:hover {
+    background: var(--cubiq-accent-light) !important;
+}
+
+/* add effect button */
+div[role='presentation']>div:nth-child(3)>div:nth-child(1)>div:nth-child(3)>button {
+    transition: all 0.2s ease-out !important;
+    background: var(--cubiq-accent) !important;
+}
+
+/* notification bell menu bottom stripe accent */
+div[role='tooltip']:not(.MuiTooltip-popper) {
+    border-bottom: 4px solid var(--cubiq-accent-light) !important;
+}
+
+/* open arrow */
+path[d='M7 10l5 5 5-5z'] {
+    color: var(--cubiq-accent-light) !important;
+}
+
+/* custom color when you select text */
+::selection {
+    background: var(--cubiq-accent);
+}
+
+.react-contextmenu-wrapper canvas:nth-child(1) {
+    border-radius: 1em;
+}
+
+/* border of the selected clip */
+.react-contextmenu-wrapper>#clip[style*='z-index: 2'] {
+    border: 1px solid var(--cubiq-accent) !important;
+}

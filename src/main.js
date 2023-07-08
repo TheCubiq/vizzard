@@ -1,10 +1,5 @@
-// styles:
-import floatingPanel from "./styles/floatingPanel.css?inline";
-import colorPicker from "./styles/colorPicker.css?inline";
-import vizzyThemer from "./styles/vizzyThemer.css?inline";
-import others from "./styles/others.css?inline";
-import customFolds from "./styles/customFolds.css?inline";
-import expandViews from "./styles/expandViews.css?inline";
+import styleBundle from "./styles/dist/main.css?inline";
+
 // scripts:
 import Selectors from "./utils/selectors";
 import injectVizzard from "./vizzard";
@@ -28,12 +23,7 @@ const vizzardReload = (inj_styles = false) => {
   setTimeout(() => {
     if (inj_styles) {
       // load custom css
-      GM_addStyle(vizzyThemer);
-      GM_addStyle(colorPicker);
-      GM_addStyle(floatingPanel);
-      GM_addStyle(others);
-      GM_addStyle(customFolds);
-      GM_addStyle(expandViews);
+      GM_addStyle(styleBundle);
     }
 
     // inject scripts that will run on any vizzy page
