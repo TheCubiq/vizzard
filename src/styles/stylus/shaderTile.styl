@@ -1,0 +1,89 @@
+mask-image() {
+    -webkit-mask-image: arguments;
+    mask-image: arguments;
+}
+
+mask-size() {
+    -webkit-mask-size: arguments;
+    mask-size: arguments;
+}
+
+:root {
+    --shaderTileHeight: 100%;
+    --icon-invert-corner: url('https://raw.githubusercontent.com/TheCubiq/vizzard/fd8fbf36bb95ce7f8ee8e553b0b610e09cc23697/src/assets/inverted-corner-left.svg');
+}
+
+#UNIQUE_ID_OF_DIV {
+    margin: 0;
+    width: calc(100% - 10px) !important;
+    height: 100% !important;
+    overflow: hidden;
+
+    + div {
+        pointer-events: none;
+        right: 0;
+        left: 0; /* // bottom: 10%; */
+        bottom: inherit;
+        bottom: 5%;
+        position: absolute;
+        justify-content: space-between;
+        padding: 0 2.5rem;
+        background: none;
+
+        button {
+            pointer-events: all;
+            z-index: 200;
+            box-shadow: rgb(0 0 0 / 50%) 0px 3px 4px 3px;
+
+            &.MuiButton-text {
+                background-color: var(--cubiq-accent-dark);
+            }
+        }
+    }
+
+    .ace_scrollbar-v {
+        top: 20px;
+    }
+}
+
+:has(+ #UNIQUE_ID_OF_DIV) {
+    opacity: 0.5;
+    position: absolute;
+    left: 0;
+    z-index: 100;
+    transition: all 0.3s ease-in-out;
+    top: 0;
+    translate: 0 -100%;
+    background-color: var(--cubiq-accent-dark);
+    color: var(--cubiq-primary-text1color);
+    border-radius: 10px 10px 0;
+    box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 5px 8px 0px rgba(0, 0, 0, 0.14), 0px 1px 14px 0px rgba(0, 0, 0, 0.12);
+    width: 100%;
+
+    &:hover {
+        translate: 0 0;
+        opacity: 1;
+        box-shadow: var(--cubiq-accent-light) 0px -5px 15px;
+    }
+
+    &::after {
+        content: '🤍';
+        padding-left: 16px;
+        text-align: center;
+        position: absolute;
+        bottom: -20px;
+        right: 0;
+        width: 50px;
+        line-height: 20px;
+        height: 20px; /* // height: 10px; */
+        border-radius: 0 0 0.5rem 0;
+        background-color: @background-color;
+        mask-image: var(--icon-invert-corner);
+        mask-size: 100% 100%;
+        background-repeat: no-repeat;
+    }
+
+    .MuiAlert-icon {
+        color: var(--cubiq-primary-text1color);
+    }
+}

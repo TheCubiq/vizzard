@@ -11,7 +11,7 @@
 
 /* apply transitions to all these: */
 /* canvas tile */
-// .mosaic-root .mosaic-tile:nth-child(7), 
+// .mosaic-root .mosaic-tile:nth-last-child(1 of .mosaic-tile),
 .panelFloat .mosaic-root .mosaic-tile, 
 .panelFloat .mosaic-root .mosaic-split {
     transition: top 0.3s 0.2s, bottom 0.3s 0.2s;
@@ -47,21 +47,21 @@
 }
 
 /* opaque panel looks too sicc */
-.panelFloat div.mosaic-root > div:nth-child(7) > div > div.mosaic-window-body {
+.panelFloat div.mosaic-root > div:nth-last-child(1 of .mosaic-tile) > div > div.mosaic-window-body {
     transition: background 0.3s;
     backdrop-filter: blur(20px) brightness(0.2);
 }
 
 .panelFloat.floatingPanelOpaque {
-    div.mosaic-root > div:nth-child(7) > div > div.mosaic-window-body {
+    div.mosaic-root > div:nth-last-child(1 of .mosaic-tile) > div > div.mosaic-window-body {
         background: none !important;
     }
 }
 
 /* remove lines between clips */
 .panelFloat {
-    .mosaic-root > div:nth-child(7) > div > div.mosaic-window-body > div > div > div.ps > div > .ps > div:nth-child(1) > div > div, 
-    .panelFloat .mosaic-root > div:nth-child(7) > div > div.mosaic-window-body .ps > div > .ps > div:nth-child(1) > div {
+    .mosaic-root > div:nth-last-child(1 of .mosaic-tile) > div > div.mosaic-window-body > div > div > div.ps > div > .ps > div:nth-child(1) > div > div,
+    .panelFloat .mosaic-root > div:nth-last-child(1 of .mosaic-tile) > div > div.mosaic-window-body .ps > div > .ps > div:nth-child(1) > div {
         background-size: unset !important;
     }
 }
@@ -78,7 +78,7 @@
 }
 
 /* move the panel to the bottom when it's not open and floating */
-.panelFloat:not(.clipHover) .mosaic-root .mosaic-tile:nth-child(7) {
+.panelFloat:not(.clipHover) .mosaic-root .mosaic-tile:nth-last-child(1 of .mosaic-tile) {
     top: var(--floatingPanelClosed) !important;
     z-index: 2;
 }
@@ -103,7 +103,7 @@
 }
 
 /* if panelFloat, stretch all the views except the play panel to very bottom */
-.panelFloat .mosaic-root .mosaic-tile:not(:nth-child(7)), 
+.panelFloat .mosaic-root .mosaic-tile:not(:nth-last-child(1 of .mosaic-tile)),
 .panelFloat .mosaic-root .mosaic-split.-row {
     bottom: 44px !important;
 }
@@ -116,11 +116,3 @@
 .panelFloat:not(.clipHover) .mosaic-root .mosaic-split.-column {
     top: var(--floatingPanelClosed) !important;
 }
-
-// .scrollbar-container {
-//     height: auto !important;    
-// }
-
-
-
-

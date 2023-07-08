@@ -5,7 +5,7 @@
   --cubiq-accent-color-raw: 315, 50%;
   --cubiq-accent: hsl(var(--cubiq-accent-color-raw), var(--vizzard-rawaccent-l));
   --cubiq-accent-light: hsl(var(--cubiq-accent-color-raw), calc(var(--vizzard-rawaccent-l) + 15%));
-  --cubiq-accent-dark: hsl(var(--cubiq-accent-color-raw), calc(var(--vizzard-rawaccent-l) + 30%));
+  --cubiq-accent-dark: hsl(var(--cubiq-accent-color-raw), calc(var(--vizzard-rawaccent-l) - 25%));
   --cubiq-accent-light-transparent: hsla(var(--cubiq-accent-color-raw), 50%, 0.2);
   --cubiq-accent-dark-transparent: hsla(var(--cubiq-accent-color-raw), 20%, 0.2);
   --vz-background: #000;
@@ -16,7 +16,23 @@
   --icon-expand-left: url("https://raw.githubusercontent.com/TheCubiq/vizzard/master/src/assets/arrow-left.svg");
   --icon-expand-right: url("https://raw.githubusercontent.com/TheCubiq/vizzard/master/src/assets/arrow-right.svg");
   --icon-fold: url("https://raw.githubusercontent.com/TheCubiq/vizzard/master/src/assets/foldArrow.svg");
-  --icon-invert-corner: url("https://raw.githubusercontent.com/TheCubiq/vizzard/master/src/assets/inverted-corner-left.svg");
+  --icon-invert-corner: url("https://raw.githubusercontent.com/TheCubiq/vizzard/fd8fbf36bb95ce7f8ee8e553b0b610e09cc23697/src/assets/inverted-corner-left.svg");
+}
+::-webkit-scrollbar-track {
+/*         border-radius: 10px; */
+  background-color: transparent;
+}
+::-webkit-scrollbar-track:hover {
+  background-color: rgba(15,15,15,0.459);
+}
+::-webkit-scrollbar {
+  width: 6px;
+  background-color: transparent;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+/* 		-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3); */
+  background-color: #aaa !important;
 }
 path[d='M10 17l5-5-5-5v10z'] {
   color: var(--cubiq-primary-text1color) !important;
@@ -194,15 +210,15 @@ path[d='M7 10l5 5 5-5z'] {
   filter: invert(1) drop-shadow(5px 0px 10px var(--cubiq-accent-light)) brightness(0.7);
   opacity: 1;
 }
-.panelFloat div.mosaic-root > div:nth-child(7) > div > div.mosaic-window-body {
+.panelFloat div.mosaic-root > div:nth-last-child(1 of .mosaic-tile) > div > div.mosaic-window-body {
   transition: background 0.3s;
   backdrop-filter: blur(20px) brightness(0.2);
 }
-.panelFloat.floatingPanelOpaque div.mosaic-root > div:nth-child(7) > div > div.mosaic-window-body {
+.panelFloat.floatingPanelOpaque div.mosaic-root > div:nth-last-child(1 of .mosaic-tile) > div > div.mosaic-window-body {
   background: none !important;
 }
-.panelFloat .mosaic-root > div:nth-child(7) > div > div.mosaic-window-body > div > div > div.ps > div > .ps > div:nth-child(1) > div > div,
-.panelFloat .panelFloat .mosaic-root > div:nth-child(7) > div > div.mosaic-window-body .ps > div > .ps > div:nth-child(1) > div {
+.panelFloat .mosaic-root > div:nth-last-child(1 of .mosaic-tile) > div > div.mosaic-window-body > div > div > div.ps > div > .ps > div:nth-child(1) > div > div,
+.panelFloat .panelFloat .mosaic-root > div:nth-last-child(1 of .mosaic-tile) > div > div.mosaic-window-body .ps > div > .ps > div:nth-child(1) > div {
   background-size: unset !important;
 }
 .mosaic-root > div > div > div.mosaic-window-body > div > div > div > div.scrollbar-container.ps > div:nth-child(1) {
@@ -211,7 +227,7 @@ path[d='M7 10l5 5 5-5z'] {
 .panelFloat .mosaic-root > div > div > div.mosaic-window-body > div > div > div > div.scrollbar-container.ps > div:nth-child(1) {
   height: calc(100% - 9px);
 }
-.panelFloat:not(.clipHover) .mosaic-root .mosaic-tile:nth-child(7) {
+.panelFloat:not(.clipHover) .mosaic-root .mosaic-tile:nth-last-child(1 of .mosaic-tile) {
   top: var(--floatingPanelClosed) !important;
   z-index: 2;
 }
@@ -233,7 +249,7 @@ path[d='M7 10l5 5 5-5z'] {
 .panelFloat .vizzard-pin {
   opacity: 0.3;
 }
-.panelFloat .mosaic-root .mosaic-tile:not(:nth-child(7)),
+.panelFloat .mosaic-root .mosaic-tile:not(:nth-last-child(1 of .mosaic-tile)),
 .panelFloat .mosaic-root .mosaic-split.-row {
   bottom: 44px !important;
 }
@@ -417,4 +433,76 @@ div[id*='layer:'] li.Mui-expanded .MuiTreeItem-iconContainer button::before {
 }
 #root #editor-base .mosaic-root > div:nth-child(4 of .mosaic-tile) {
   z-index: 90;
+}
+:root {
+  --shaderTileHeight: 100%;
+  --icon-invert-corner: url("https://raw.githubusercontent.com/TheCubiq/vizzard/fd8fbf36bb95ce7f8ee8e553b0b610e09cc23697/src/assets/inverted-corner-left.svg");
+}
+#UNIQUE_ID_OF_DIV {
+  margin: 0;
+  width: calc(100% - 10px) !important;
+  height: 100% !important;
+  overflow: hidden;
+}
+#UNIQUE_ID_OF_DIV + div {
+  pointer-events: none;
+  right: 0;
+  left: 0; /* // bottom: 10%; */
+  bottom: inherit;
+  bottom: 5%;
+  position: absolute;
+  justify-content: space-between;
+  padding: 0 2.5rem;
+  background: none;
+}
+#UNIQUE_ID_OF_DIV + div button {
+  pointer-events: all;
+  z-index: 200;
+  box-shadow: #000 0px 3px 4px 3px;
+}
+#UNIQUE_ID_OF_DIV + div button.MuiButton-text {
+  background-color: var(--cubiq-accent-dark);
+}
+#UNIQUE_ID_OF_DIV .ace_scrollbar-v {
+  top: 20px;
+}
+:has(+ #UNIQUE_ID_OF_DIV) {
+  opacity: 0.5;
+  position: absolute;
+  left: 0;
+  z-index: 100;
+  transition: all 0.3s ease-in-out;
+  top: 0;
+  translate: 0 -100%;
+  background-color: var(--cubiq-accent-dark);
+  color: var(--cubiq-primary-text1color);
+  border-radius: 10px 10px 0;
+  box-shadow: 0px 3px 5px -1px rgba(0,0,0,0.2), 0px 5px 8px 0px rgba(0,0,0,0.14), 0px 1px 14px 0px rgba(0,0,0,0.12);
+  width: 100%;
+}
+:has(+ #UNIQUE_ID_OF_DIV):hover {
+  translate: 0 0;
+  opacity: 1;
+  box-shadow: var(--cubiq-accent-light) 0px -5px 15px;
+}
+:has(+ #UNIQUE_ID_OF_DIV)::after {
+  content: '🤍';
+  padding-left: 16px;
+  text-align: center;
+  position: absolute;
+  bottom: -20px;
+  right: 0;
+  width: 50px;
+  line-height: 20px;
+  height: 20px; /* // height: 10px; */
+  border-radius: 0 0 0.5rem 0;
+  background-color: var(--cubiq-accent-dark);
+  -webkit-mask-image: var(--icon-invert-corner);
+  mask-image: var(--icon-invert-corner);
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+:has(+ #UNIQUE_ID_OF_DIV) .MuiAlert-icon {
+  color: var(--cubiq-primary-text1color);
 }
