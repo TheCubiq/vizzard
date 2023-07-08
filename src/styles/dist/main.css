@@ -1,0 +1,420 @@
+:root {
+  --vizzard-rawaccent-h: 315;
+  --vizzard-rawaccent-s: 50%;
+  --vizzard-rawaccent-l: 50%;
+  --cubiq-accent-color-raw: 315, 50%;
+  --cubiq-accent: hsl(var(--cubiq-accent-color-raw), var(--vizzard-rawaccent-l));
+  --cubiq-accent-light: hsl(var(--cubiq-accent-color-raw), calc(var(--vizzard-rawaccent-l) + 15%));
+  --cubiq-accent-dark: hsl(var(--cubiq-accent-color-raw), calc(var(--vizzard-rawaccent-l) + 30%));
+  --cubiq-accent-light-transparent: hsla(var(--cubiq-accent-color-raw), 50%, 0.2);
+  --cubiq-accent-dark-transparent: hsla(var(--cubiq-accent-color-raw), 20%, 0.2);
+  --vz-background: #000;
+  --cubiq-secondary-bgcolor: hsla(var(--cubiq-accent-color-raw), 30%, 0.2);
+  --cubiq-bordercolor: #333;
+  --cubiq-primary-text1color: #fff;
+  --cubiq-darker-color: #aaa;
+  --icon-expand-left: url("https://raw.githubusercontent.com/TheCubiq/vizzard/master/src/assets/arrow-left.svg");
+  --icon-expand-right: url("https://raw.githubusercontent.com/TheCubiq/vizzard/master/src/assets/arrow-right.svg");
+  --icon-fold: url("https://raw.githubusercontent.com/TheCubiq/vizzard/master/src/assets/foldArrow.svg");
+  --icon-invert-corner: url("https://raw.githubusercontent.com/TheCubiq/vizzard/master/src/assets/inverted-corner-left.svg");
+}
+path[d='M10 17l5-5-5-5v10z'] {
+  color: var(--cubiq-primary-text1color) !important;
+}
+.MuiSvgIcon-fontSizeLarge {
+  color: var(--cubiq-primary-text1color) !important;
+}
+input[type='number'] {
+  background: var(--cubiq-accent-light-transparent) !important;
+}
+.MuiSelect-select.MuiSelect-select {
+  background: var(--cubiq-accent-light-transparent) !important;
+}
+.mosaic-window-body>div>nav>span>span {
+  color: var(--cubiq-primary-text1color) !important;
+}
+.MuiTypography-colorTextPrimary {
+  color: var(--cubiq-primary-text1color) !important;
+}
+.MuiToggleButton-root.Mui-selected {
+  color: var(--cubiq-primary-text1color) !important;
+}
+.MuiToggleButton-root {
+  color: var(--cubiq-darker-color) !important;
+}
+.MuiTypography-colorTextSecondary {
+  color: var(--cubiq-primary-text1color) !important;
+}
+.MuiTypography-root {
+  color: var(--cubiq-primary-text1color);
+}
+.mosaic.mosaic-blueprint-theme {
+  background: #000 !important;
+}
+.mosaic.mosaic-blueprint-theme .mosaic-preview .mosaic-window-body,
+.mosaic.mosaic-blueprint-theme .mosaic-window .mosaic-window-body {
+  background: var(--vz-background) !important; /* border: 5px solid var(--cubiq-secondary-bgcolor) !important; */
+}
+.mosaic-window-body > div > nav > span > div[class*=' '] {
+  background-color: var(--cubiq-accent-light) !important;
+}
+.mosaic-root > div:nth-child(1) nav > span {
+  transition: background-color 0.5s ease;
+}
+.mosaic-root > div:nth-child(1) nav > span[aria-describedby] {
+  background-color: var(--cubiq-accent-light-transparent) !important;
+}
+.MuiListItem-gutters button.MuiIconButton-root {
+  color: var(--cubiq-darker-color);
+}
+.mosaic.mosaic-blueprint-theme .mosaic-split .mosaic-split-line {
+  box-shadow: 0 0 0 1px var(--cubiq-bordercolor);
+}
+.mosaic-preview {
+  opacity: 0%;
+}
+.scrollbar-container>ul>div>div {
+  background: var(--cubiq-secondary-bgcolor) !important;
+}
+.MuiInput-underline:before {
+  border-bottom: 2px solid var(--cubiq-primary-text1color) !important;
+}
+.MuiInputBase-input {
+  color: var(--cubiq-primary-text1color) !important;
+}
+.MuiTypography-colorPrimary {
+  color: var(--cubiq-accent-light) !important;
+}
+.MuiButton-textPrimary {
+  color: var(--cubiq-accent-light) !important;
+}
+.MuiIconButton-colorPrimary:not([disabled]) {
+  color: var(--cubiq-accent-light) !important;
+}
+[id*='item'] button {
+  opacity: 0.2;
+}
+.MuiSvgIcon-colorPrimary {
+  color: var(--cubiq-accent-light) !important;
+}
+.MuiCheckbox-colorPrimary.Mui-checked {
+  color: var(--cubiq-accent-light) !important;
+}
+.MuiButton-outlinedPrimary {
+  border: 1px solid var(--cubiq-accent-light) !important;
+  color: var(--cubiq-accent-light) !important;
+}
+.MuiSlider-root {
+  color: var(--cubiq-accent-light) !important;
+}
+.MuiInput-underline:after {
+  border-bottom: 2px solid var(--cubiq-accent-light) !important;
+}
+.MuiTreeItem-root[tabindex='0']>.MuiTreeItem-content {
+  background-color: var(--cubiq-accent-light-transparent) !important;
+}
+.mosaic-window-body>div:nth-child(1)>div:nth-child(1)>div:nth-child(2)>div:nth-child(1)>div:nth-child(1)>div:nth-child(2) {
+  background-color: var(--cubiq-accent) !important;
+}
+.mosaic-window-body>div:nth-child(1)>div:nth-child(1)>div:nth-child(2)>div:nth-child(1)>div:nth-child(1)>div:nth-child(1)>div:nth-child(2) {
+  background-color: var(--cubiq-accent-light-transparent) !important;
+}
+.MuiChip-clickable {
+  background: var(--vz-background) !important;
+  border: 1px solid var(--cubiq-accent-light) !important;
+  color: var(--cubiq-accent-light) !important;
+}
+.MuiButton-containedPrimary {
+  background: var(--vz-background) !important;
+  border: 1px solid var(--cubiq-accent-light) !important;
+  color: var(--cubiq-accent-light) !important;
+}
+._hj-3obO5__EmotionIconDefault__commentIcon:before {
+  opacity: 0%;
+}
+._hj_feedback_container ._hj-qoDG___EmotionIconDefault__iconEmotionDefault._hj-1BEBR__EmotionIconDefault__like ._hj-2RA7u__EmotionIconDefault__expressionIcon:before {
+  content: '\e909' !important;
+}
+header>div:nth-of-type(3)>p:after {
+  padding-left: 5px;
+  content: '+ 🤍 by Cubiq uwu';
+  color: var(--cubiq-accent-light) !important;
+  opacity: 50%;
+}
+div[role='presentation']>div:nth-child(3)>div:nth-child(1)>div:nth-child(3)>div:nth-child(1)>div:nth-child(1)>button:hover,
+div[role='presentation']>div:nth-child(3)>div:nth-child(1)>div:nth-child(3)>button:hover {
+  background: var(--cubiq-accent-light) !important;
+}
+div[role='presentation']>div:nth-child(3)>div:nth-child(1)>div:nth-child(3)>button {
+  transition: all 0.2s ease-out !important;
+  background: var(--cubiq-accent) !important;
+}
+div[role='tooltip']:not(.MuiTooltip-popper) {
+  border-bottom: 4px solid var(--cubiq-accent-light) !important;
+}
+path[d='M7 10l5 5 5-5z'] {
+  color: var(--cubiq-accent-light) !important;
+}
+::selection {
+  background: var(--cubiq-accent);
+}
+.react-contextmenu-wrapper canvas:nth-child(1) {
+  border-radius: 1em;
+}
+.react-contextmenu-wrapper>#clip[style*='z-index: 2'] {
+  border: 1px solid var(--cubiq-accent) !important;
+}
+:root {
+/* set the height of the panel in closed state */
+  --floatingPanelClosed: calc(100% - 50px);
+}
+@media (pointer: coarse) {
+  :root {
+    --floatingPanelClosed: calc(100% - 59px);
+  }
+}
+.panelFloat .mosaic-root .mosaic-tile,
+.panelFloat .mosaic-root .mosaic-split {
+  transition: top 0.3s 0.2s, bottom 0.3s 0.2s;
+}
+.panelFloat div.mosaic-window-body > div > nav > button .mosaic-root > div:nth-child(1) > div > div.mosaic-window-body > div > div > div > div:nth-child(3) > button,
+.panelFloat .mosaic-root > div:nth-child(1) > div > div.mosaic-window-body > div > div > div > div:nth-child(3) > button {
+  bottom: 15px;
+}
+.ps > div > div:nth-child(1) > div:nth-child(1) > canvas {
+  transition: all 0.3s;
+}
+.panelFloat .ps > div > div:nth-child(1) > div:nth-child(1) > canvas {
+  opacity: 0;
+}
+.panelFloat .ps > div > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) {
+  background-color: transparent !important;
+}
+.panelFloat.clipHover .ps > div > div:nth-child(1) > div:nth-child(1) > canvas {
+  filter: invert(1) drop-shadow(5px 0px 10px var(--cubiq-accent-light)) brightness(0.7);
+  opacity: 1;
+}
+.panelFloat div.mosaic-root > div:nth-child(7) > div > div.mosaic-window-body {
+  transition: background 0.3s;
+  backdrop-filter: blur(20px) brightness(0.2);
+}
+.panelFloat.floatingPanelOpaque div.mosaic-root > div:nth-child(7) > div > div.mosaic-window-body {
+  background: none !important;
+}
+.panelFloat .mosaic-root > div:nth-child(7) > div > div.mosaic-window-body > div > div > div.ps > div > .ps > div:nth-child(1) > div > div,
+.panelFloat .panelFloat .mosaic-root > div:nth-child(7) > div > div.mosaic-window-body .ps > div > .ps > div:nth-child(1) > div {
+  background-size: unset !important;
+}
+.mosaic-root > div > div > div.mosaic-window-body > div > div > div > div.scrollbar-container.ps > div:nth-child(1) {
+  height: calc(100% - 2px);
+}
+.panelFloat .mosaic-root > div > div > div.mosaic-window-body > div > div > div > div.scrollbar-container.ps > div:nth-child(1) {
+  height: calc(100% - 9px);
+}
+.panelFloat:not(.clipHover) .mosaic-root .mosaic-tile:nth-child(7) {
+  top: var(--floatingPanelClosed) !important;
+  z-index: 2;
+}
+.vizzard-pin {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  transition: box-shadow, background-color, opacity, 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  border-radius: 50%; /* background-color: transparent */
+  filter: grayscale(100%);
+  opacity: 0.7;
+  cursor: pointer;
+}
+.vizzard-pin:hover {
+  background-color: rgba(255,255,255,0.16);
+  box-shadow: 0px 0px 0px 4px rgba(255,255,255,0.16);
+}
+.panelFloat .vizzard-pin {
+  opacity: 0.3;
+}
+.panelFloat .mosaic-root .mosaic-tile:not(:nth-child(7)),
+.panelFloat .mosaic-root .mosaic-split.-row {
+  bottom: 44px !important;
+}
+.panelFloat .mosaic-root .mosaic-split.-column {
+  cursor: default;
+  pointer-events: none;
+}
+.panelFloat:not(.clipHover) .mosaic-root .mosaic-split.-column {
+  top: var(--floatingPanelClosed) !important;
+}
+.mySlider {
+  width: 10px;
+  height: 3px;
+  appearance: none;
+  outline: none;
+  padding: 0;
+  margin-right: 10px;
+  opacity: 0.5;
+  border-radius: 1em;
+  transition: width, opacity, 0.3s ease-in-out;
+}
+.mySlider:hover {
+  opacity: 1;
+}
+.mySlider.unfolded {
+  width: 10em;
+  opacity: 1;
+}
+.mySlider::-webkit-slider-runnable-track {
+  cursor: pointer;
+  transform: scale(1.05);
+  border-radius: 0;
+}
+.mySlider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 10px;
+  aspect-ratio: 1;
+  border-radius: 50%; /* box-shadow: 0px 0px 0px 0px var(--cubiq-accent-dark); */
+  background: var(--cubiq-accent-light);
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: box-shadow 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+.mySlider::-webkit-slider-thumb:hover {
+  box-shadow: 0px 0px 0px 6px rgba(255,255,255,0.16);
+}
+.myGradient {
+/* padding: 0;
+    margin: 0; */
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  border-radius: 1em;
+  border: 1px solid #000;
+}
+#vizzard-update-btn {
+/* color: var(--cubiq-accent-light); */
+  color: transparent;
+  position: absolute;
+  right: 0;
+  top: 2.5em;
+  max-width: 7px;
+  white-space: nowrap;
+  overflow: hidden;
+  padding-inline: 0;
+  transition: all 0.5s; /* background-color: var(--cubiq-accent-light);
+    background-color: orange; */
+  background-color: #90ee90;
+}
+#vizzard-update-btn:hover,
+#vizzard-update-btn:focus {
+  background-color: var(--cubiq-accent-dark);
+  color: var(--cubiq-primary-text1color);
+  padding-inline: 12px;
+  max-width: fit-content;
+  max-width: 170px;
+}
+div[id*='layer:'] li .MuiTreeItem-iconContainer:hover button::before {
+  opacity: 1;
+}
+div[id*='layer:'] li .MuiTreeItem-iconContainer button::before {
+  content: '';
+  position: absolute;
+  width: 1em;
+  height: 1em;
+  transition-property: rotate, opacity;
+  transition-duration: 0.4s, 0.1s;
+  opacity: 0.3;
+  background-color: var(--cubiq-primary-text1color);
+  -webkit-mask-image: var(--icon-fold);
+  mask-image: var(--icon-fold);
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+}
+div[id*='layer:'] li .MuiTreeItem-iconContainer svg {
+/* display: none; */
+  visibility: hidden;
+}
+div[id*='layer:'] li.Mui-expanded .MuiTreeItem-iconContainer button::before {
+  rotate: 90deg;
+}
+.vz-expander-header {
+  border-top: 4px outset transparent;
+  height: auto;
+  z-index: 1;
+  top: -2px;
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+}
+.vz-expander-header:hover {
+  pointer-events: auto;
+}
+.vz-expander-header:hover > div {
+  top: 0;
+  opacity: 1;
+  max-width: 100px;
+  box-shadow: var(--cubiq-accent-light) 0px -5px 15px;
+}
+.vz-expander-header:hover > div span {
+  opacity: 1;
+}
+.vz-expander-header > div {
+  pointer-events: auto;
+  opacity: 0.3;
+  background-color: var(--cubiq-accent-light) !important;
+  transition-property: opacity, inset, max-width, box-shadow;
+  transition-duration: 0.3s, 0.3s, 0.5s;
+  transition-delay: 0.2s, 0.2s, 0.5s;
+  height: 1em;
+  overflow: hidden;
+  max-width: 1em;
+  border-radius: 1em;
+  top: -0.8em;
+  overflow: hidden;
+}
+.vz-expander-header > div span {
+  opacity: 0;
+  font-size: 1rem;
+  width: 1em;
+  height: 1em;
+  z-index: 1;
+  left: -0.8em;
+  transition-property: opacity, filter, transform;
+  transition-duration: 0.3s, 0.3s, 0.5s;
+  transition-delay: 0.6s, 0s, 0.3s;
+  filter: opacity(0.3);
+  background-color: var(--cubiq-primary-text1color);
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+}
+.vz-expander-header > div span:hover {
+  filter: opacity(1);
+}
+.vz-expander-header .vz-xpand-left {
+  -webkit-mask-image: var(--icon-expand-left);
+  mask-image: var(--icon-expand-left);
+}
+.vz-expander-header .vz-xpand-right {
+  -webkit-mask-image: var(--icon-expand-right);
+  mask-image: var(--icon-expand-right);
+}
+.vz-expanded-left .vz-xpand-left,
+.vz-expanded-right .vz-xpand-right {
+  transform: scaleX(-1);
+}
+.vz-animation {
+  transition: all 0.5s !important;
+  z-index: 10;
+}
+#root #editor-base .mosaic-root > .vz-expanded-right {
+  right: 0 !important;
+  z-index: 10;
+}
+#root #editor-base .mosaic-root > .vz-expanded-left {
+  left: 0 !important;
+  z-index: 2;
+}
+#root #editor-base .mosaic-root > div:nth-child(4 of .mosaic-tile) {
+  z-index: 90;
+}

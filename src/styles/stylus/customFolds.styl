@@ -1,0 +1,33 @@
+div[id*='layer:'] li {
+    .MuiTreeItem-iconContainer {
+        &:hover {
+            button::before {
+                opacity: 1;
+            }
+        }
+        
+        button::before {
+            content: '';
+            position: absolute;
+            width: 1em;
+            height: 1em;
+            transition-property: rotate, opacity;
+            transition-duration: 0.4s, 0.1s;
+            opacity: 0.3;
+            background-color: var(--cubiq-primary-text1color);
+            mask-image: var(--icon-fold);
+            mask-size: 100% 100%;
+        }
+
+        svg {
+            /* display: none; */
+            visibility: hidden;
+        }
+    }
+
+    &.Mui-expanded {
+        .MuiTreeItem-iconContainer button::before {
+            rotate: 90deg;
+        }
+    }
+}

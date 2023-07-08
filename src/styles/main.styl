@@ -1,0 +1,37 @@
+// @import "./stylus/*";
+
+:root {
+    --vizzard-rawaccent-h: 315;
+    --vizzard-rawaccent-s: 50%;
+    --vizzard-rawaccent-l: 50%;
+
+    --cubiq-accent-color-raw: 315, 50%;
+
+    --cubiq-accent: @css{hsl(var(--cubiq-accent-color-raw), var(--vizzard-rawaccent-l))};
+    --cubiq-accent-light: @css{hsl(var(--cubiq-accent-color-raw), calc(var(--vizzard-rawaccent-l) + 15%))};
+    --cubiq-accent-dark: @css{hsl(var(--cubiq-accent-color-raw), calc(var(--vizzard-rawaccent-l) + 30%))};
+
+    --cubiq-accent-light-transparent: @css{hsla(var(--cubiq-accent-color-raw), 50%, 0.2)};
+    --cubiq-accent-dark-transparent: @css{hsla(var(--cubiq-accent-color-raw), 20%, 0.2)};
+
+    --vz-background: #000;
+    --cubiq-secondary-bgcolor: @css{hsla(var(--cubiq-accent-color-raw), 30%, 0.2)};
+
+    --cubiq-bordercolor: #333;
+    --cubiq-primary-text1color: #fff;
+    --cubiq-darker-color: #aaa;
+
+    // svg variables
+    --icon-expand-left: url("https://raw.githubusercontent.com/TheCubiq/vizzard/master/src/assets/arrow-left.svg");
+    --icon-expand-right: url("https://raw.githubusercontent.com/TheCubiq/vizzard/master/src/assets/arrow-right.svg");
+    --icon-fold: url("https://raw.githubusercontent.com/TheCubiq/vizzard/master/src/assets/foldArrow.svg");
+    --icon-invert-corner: url("https://raw.githubusercontent.com/TheCubiq/vizzard/master/src/assets/inverted-corner-left.svg");
+}
+
+@import "./stylus/vizzyThemer.styl";
+@import "./stylus/utils.styl";
+@import "./stylus/floatingPanel.styl";
+@import "./stylus/colorPicker.styl";
+@import "./stylus/updater.styl";
+@import "./stylus/customFolds.styl";
+@import "./stylus/expandViews.styl";

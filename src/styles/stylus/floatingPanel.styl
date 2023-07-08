@@ -1,0 +1,126 @@
+:root {
+    /* set the height of the panel in closed state */
+    --floatingPanelClosed: calc(100% - 50px);
+}
+
+@media (pointer: coarse) {
+    :root {
+        --floatingPanelClosed: calc(100% - 59px);
+    }
+}
+
+/* apply transitions to all these: */
+/* canvas tile */
+// .mosaic-root .mosaic-tile:nth-child(7), 
+.panelFloat .mosaic-root .mosaic-tile, 
+.panelFloat .mosaic-root .mosaic-split {
+    transition: top 0.3s 0.2s, bottom 0.3s 0.2s;
+}
+
+/* shrink/expand navbar button */
+/* explore projects button */
+.panelFloat div.mosaic-window-body > div > nav > button, .panelFloat {
+    .mosaic-root > div:nth-child(1) > div > div.mosaic-window-body > div > div > div > div:nth-child(3) > button {
+        bottom: 15px;
+    }
+}
+
+/* waveform anim */
+.ps > div > div:nth-child(1) > div:nth-child(1) > canvas {
+    transition: all 0.3s;
+}
+
+/* in folded state hide the waveform */
+.panelFloat .ps > div > div:nth-child(1) > div:nth-child(1) > canvas {
+    opacity: 0;
+}
+
+/* waveform bg in folded state */
+.panelFloat .ps > div > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) {
+    background-color: transparent !important;
+}
+
+/* waveform in open state */
+.panelFloat.clipHover .ps > div > div:nth-child(1) > div:nth-child(1) > canvas {
+    filter: invert(1) drop-shadow(5px 0px 10px var(--cubiq-accent-light)) brightness(0.7);
+    opacity: 1;
+}
+
+/* opaque panel looks too sicc */
+.panelFloat div.mosaic-root > div:nth-child(7) > div > div.mosaic-window-body {
+    transition: background 0.3s;
+    backdrop-filter: blur(20px) brightness(0.2);
+}
+
+.panelFloat.floatingPanelOpaque {
+    div.mosaic-root > div:nth-child(7) > div > div.mosaic-window-body {
+        background: none !important;
+    }
+}
+
+/* remove lines between clips */
+.panelFloat {
+    .mosaic-root > div:nth-child(7) > div > div.mosaic-window-body > div > div > div.ps > div > .ps > div:nth-child(1) > div > div, 
+    .panelFloat .mosaic-root > div:nth-child(7) > div > div.mosaic-window-body .ps > div > .ps > div:nth-child(1) > div {
+        background-size: unset !important;
+    }
+}
+
+.mosaic-root > div > div > div.mosaic-window-body > div > div > div > div.scrollbar-container.ps > div:nth-child(1) {
+    height: calc(100% - 2px);
+}
+
+/* increase the height of objects window */
+.panelFloat {
+    .mosaic-root > div > div > div.mosaic-window-body > div > div > div > div.scrollbar-container.ps > div:nth-child(1) {
+        height: calc(100% - 9px);
+    }
+}
+
+/* move the panel to the bottom when it's not open and floating */
+.panelFloat:not(.clipHover) .mosaic-root .mosaic-tile:nth-child(7) {
+    top: var(--floatingPanelClosed) !important;
+    z-index: 2;
+}
+
+/* style our nice pin */
+.vizzard-pin {
+    user-select: none;
+    transition: box-shadow, background-color, opacity, 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    border-radius: 50%; /* background-color: transparent */
+    filter: grayscale(100%);
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.vizzard-pin:hover {
+    background-color: rgba(255, 255, 255, 0.16);
+    box-shadow: 0px 0px 0px 4px rgba(255, 255, 255, 0.16);
+}
+
+.panelFloat .vizzard-pin {
+    opacity: 0.3;
+}
+
+/* if panelFloat, stretch all the views except the play panel to very bottom */
+.panelFloat .mosaic-root .mosaic-tile:not(:nth-child(7)), 
+.panelFloat .mosaic-root .mosaic-split.-row {
+    bottom: 44px !important;
+}
+
+.panelFloat .mosaic-root .mosaic-split.-column {
+    cursor: default;
+    pointer-events: none;
+}
+
+.panelFloat:not(.clipHover) .mosaic-root .mosaic-split.-column {
+    top: var(--floatingPanelClosed) !important;
+}
+
+// .scrollbar-container {
+//     height: auto !important;    
+// }
+
+
+
+

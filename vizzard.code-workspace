@@ -1,0 +1,18 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../../userstyles/vizzy"
+		}
+	],
+	"settings": {
+		"compile-hero.ignore": ["*/styles/stylus/*"],
+		"compile-hero.watch": [
+			"*/styles/main.styl"
+		],
+		"compile-hero.disable-compile-files-on-did-save-code": true,
+		"svg.preview.background": "editor",
+	}
+}
